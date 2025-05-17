@@ -1,0 +1,265 @@
+{
+  "game": {
+    "title": "SPACEBAR CLICKER",
+    "per_second": "clics automatiques par seconde :",
+    "spacebar_text": "BARRE D'ESPACE",
+    "reset_confirmation": "Êtes-vous sûr de vouloir réinitialiser toutes les données du jeu ?",
+    "reset_button": "réinitialiser le jeu"
+  },
+  "items": {
+    "flash_slothmore": {
+      "name": "Flash Slothmore",
+      "description": "Le paresseux 'le plus rapide' du monde. Appuie sur la barre d'espace <b>%v</b> fois/sec. Il fait de son mieux, d'accord ?"
+    },
+    "squidward_tentacles": {
+      "name": "Carlo Tentacule",
+      "description": "Calmar grincheux. Déteste son travail. Frappe la barre d'espace <b>%v</b> fois/sec avec son visage... probablement."
+    },
+    "grumpy_grandma": {
+      "name": "Grand-mère Grincheuse",
+      "description": "Elle n'est pas fâchée contre toi, juste contre la barre d'espace. La frappe <b>%v</b> fois/sec avec sa canne."
+    },
+    "woodpecker": {
+      "name": "Pic-vert",
+      "description": "Confond ta barre d'espace avec un arbre savoureux. La picore <b>%v</b> fois/sec. Miam miam miam."
+    },
+    "spacebar_enchantment": {
+      "name": "Enchantement de Barre d'Espace",
+      "description": "Trop paresseux pour cliquer ? Cet enchantement rend tes clics <b>trois fois</b> plus puissants ! Travaille plus intelligemment."
+    },
+    "gatling": {
+      "name": "Mitrailleuse Gatling",
+      "description": "Excessif ? Non. Cette mitrailleuse Gatling déchaîne <b>%v</b> clics/sec sur cette pauvre barre d'espace. BRRRRT !"
+    },
+    "pikachu": {
+      "name": "Pikachu",
+      "description": "Pika-CHOU ! Cette souris électrique électrocute ta barre d'espace avec <b>%v</b> clics/sec. Étonnamment efficace !"
+    },
+    "blastoise": {
+      "name": "Tortank",
+      "description": "Les canons à eau de Tortank inondent la barre d'espace avec <b>%v</b> clics/sec. Surf en haut, clics en bas !"
+    },
+    "peashooter": {
+      "name": "Lance-pois",
+      "description": "Ce petit gars tire des pois sur ta barre d'espace à <b>%v</b> clics/sec. Vert et méchant !"
+    },
+    "gatling_pea": {
+      "name": "Pois Gatling",
+      "description": "Le cousin en colère du Lance-pois. Déchaîne une tempête de pois de <b>%v</b> clics/sec. Ratta-tat-POIS !"
+    },
+    "super_mario": {
+      "name": "Super Mario",
+      "description": "It's-a me, Mario ! Piétine ta barre d'espace à <b>%v</b> clics/sec. Wahoo ! Clics de niveau supérieur !"
+    },
+    "ultraman_tiga": {
+      "name": "Ultraman Tiga",
+      "description": "Ultraman Tiga défend tes clics ! Le Rayon Zepellion délivre <b>%v</b> coups de barre d'espace/sec. Pour la justice !"
+    },
+    "revolver": {
+      "name": "Revolver",
+      "description": "Cette ville n'est pas assez grande pour des barres d'espace non cliquées. Le revolver frappe <b>%v</b> clics/sec, partenaire."
+    },
+    "shovel": {
+      "name": "Une Pelle ?",
+      "description": "Une pelle ? Vraiment ? Eh bien, elle déterre <b>%v</b> clics/sec. Ne remets pas en question ses méthodes, clique simplement !"
+    },
+    "homer_simpson": {
+      "name": "Homer Simpson",
+      "description": "D'oh ! La quête de donuts d'Homer atterrit 'accidentellement' <b>%v</b> clics/sec sur la barre d'espace. Mmm, des clics..."
+    },
+    "poseidon": {
+      "name": "Poséidon",
+      "description": "Invoque un raz-de-marée de <b>%v</b> clics/sec. Ta barre d'espace est maintenant officiellement une plage !"
+    },
+    "mechanical_arm": {
+      "name": "Bras Mécanique",
+      "description": "<b>Double</b> ta propre vitesse de clics. Attention : peut développer sa propre conscience."
+    }
+  },
+  "ui": {
+    "footer": "un jeu de",
+    "spacebar_theme_title": "Thème de Barre d'Espace",
+    "sound_button": "Activer/Désactiver le Son",
+    "music_button": "Activer/Désactiver la Musique",
+    "shop_button": "Boutique",
+    "shop_coming_soon": "Fonction boutique bientôt disponible !",
+    "spacebar_theme": {
+      "default": "Par défaut",
+      "neon": "Néon",
+      "retro": "Rétro",
+      "cyber": "Cyber"
+    },
+    "shop": {
+      "title": "Boutique",
+      "tabs": {
+        "skins": "Apparences",
+        "backgrounds": "Arrière-plans",
+        "sounds": "Sons",
+        "music": "Musique"
+      },
+      "buttons": {
+        "buy": "Acheter",
+        "use": "Utiliser",
+        "using": "En cours d'utilisation"
+      }
+    }
+  },
+  "shop": {
+    "skins": {
+      "default": {
+        "name": "Apparence par Défaut",
+        "description": "L'aspect classique et fiable de la barre d'espace. Propre et simple."
+      },
+      "neon": {
+        "name": "Lueur Néon",
+        "description": "Illumine tes clics avec une esthétique néon vibrante."
+      },
+      "retro": {
+        "name": "Touches Rétro",
+        "description": "Un retour à l'âge d'or des machines à écrire et du 8-bit."
+      },
+      "cyber": {
+        "name": "Style Cyberpunk",
+        "description": "Un design futuriste pour le rebelle numérique."
+      }
+    },
+    "backgrounds": {
+      "default": {
+        "name": "Motif par Défaut",
+        "description": "Le motif d'arrière-plan subtil standard."
+      },
+      "blackboard": {
+        "name": "Tableau Noir Classique",
+        "description": "Cool à l'ancienne. Parfait pour des leçons de clics sérieuses !"
+      },
+      "paper_texture": {
+        "name": "Toile de Papier",
+        "description": "Un départ frais et texturé. Laisse tes clics écrire l'histoire."
+      },
+      "color_blocks": {
+        "name": "Éclaboussure d'Aquarelle",
+        "description": "Ambiance artistique ! Une éclaboussure vibrante de couleurs pour inspirer les clics."
+      },
+      "board": {
+        "name": "Planche en Bois",
+        "description": "Robuste et rustique. Monte à bord avec ce look classique."
+      },
+      "cartoon_starry_sky": {
+        "name": "Cosmos de Dessin Animé",
+        "description": "Décollage ! Une aventure étoilée et ludique attend chacun de tes clics."
+      },
+      "beach": {
+        "name": "Rivages Sablonneux",
+        "description": "Soleil, sable et clics ! Ton évasion virtuelle à la plage t'attend."
+      },
+      "grassland": {
+        "name": "Prairies Vertes",
+        "description": "Frais et aéré. Clique librement dans ce champ herbeux ouvert."
+      },
+      "ocean": {
+        "name": "Mer Bleue",
+        "description": "Plonge ! Explore les vastes profondeurs de l'océan remplies de clics."
+      }
+    },
+    "sounds": {
+      "default": {
+        "name": "Clic par Défaut",
+        "description": "Le son de clic original et satisfaisant."
+      },
+      "mechanical": {
+        "name": "Touches Mécaniques",
+        "description": "Net et tactile, comme un vrai clavier mécanique."
+      },
+      "bubble": {
+        "name": "Pop de Bulle",
+        "description": "Un son léger et amusant de bulles qui éclatent à chaque pression."
+      },
+      "slap": {
+        "name": "Claque de Barre d'Espace",
+        "description": "Donne à ta barre d'espace un réveil qu'elle n'oubliera pas !"
+      },
+      "cheer": {
+        "name": "Rugissement de Victoire",
+        "description": "Chaque clic est une victoire ! Entends la foule devenir complètement folle."
+      },
+      "electric_current": {
+        "name": "Zzzap Électrique",
+        "description": "Ressens la puissance électrisante ! Chaque clic est une expérience électrisante."
+      },
+      "explosion": {
+        "name": "Clic Boum",
+        "description": "Boum ! Tes clics sont absolument explosifs. À manipuler avec précaution explosive."
+      },
+      "water_droplet": {
+        "name": "Goutte Aquatique",
+        "description": "Drip, drop, cliquety-clop ! Son rafraîchissant pour chaque pression."
+      },
+      "man_laugh": {
+        "name": "Rire Joyeux",
+        "description": "Ha ! Même ta barre d'espace trouve ta vitesse de clics hilarement impressionnante."
+      },
+      "samsung_galaxy_whistle_notification": {
+        "name": "Sifflement Galaxy",
+        "description": "Notification : Tu as encore cliqué ! Ce son de sifflement emblématique et accrocheur."
+      },
+      "cough": {
+        "name": "Ahem !",
+        "description": "Ahem ! Se racle juste la gorge... ou tes clics sont-ils contagieux ?"
+      }
+    },
+    "music": {
+      "default": {
+        "name": "Détente par Défaut",
+        "description": "Comme des larmes douces sur des touches de piano, une mélodie douce et réflexive."
+      },
+      "crazy_dave": {
+        "name": "Crazy Dave",
+        "description": "Loufoque, déséquilibré et mémorable. Suggère un personnage excentrique et amical."
+      },
+      "cool_cat_jazz": {
+        "name": "Cool Cat Jazz",
+        "description": "Cool Cat Jazz ! Vif, rythmé et balançant. Te donne envie de taper du pied !"
+      },
+      "watery_graves": {
+        "name": "Tombes Aquatiques",
+        "description": "Doux, fluide et détendu. Évoque sérénité aquatique et calme."
+      },
+      "braniac_maniac": {
+        "name": "Braniac Maniac",
+        "description": "Piste intense, dramatique et rapide. Signale une confrontation épique ou un moment culminant."
+      },
+      "butterfly_lovers_violin_concerto": {
+        "name": "Concerto pour Violon des Amants Papillons",
+        "description": "Concerto pour violon bien-aimé, une histoire d'amour tragique poignante et emblématique du folklore chinois."
+      },
+      "rising_higher_step_by_step": {
+        "name": "S'élever Plus Haut Pas à Pas",
+        "description": "Ascension optimiste et rythmée ! Comme sauter vers un avenir brillant et plein d'espoir."
+      },
+      "dance_of_the_golden_snake": {
+        "name": "Danse du Serpent Doré",
+        "description": "Danse de serpent ardente et festive ! Feux d'artifice musicaux purs. Follement jubilant."
+      },
+      "horse_racing": {
+        "name": "Course de Chevaux",
+        "description": "Pièce vibrante d'erhu représentant l'énergie palpitante d'une course de chevaux et la festivité animée."
+      },
+      "yankee_doodle": {
+        "name": "Yankee Doodle",
+        "description": "Fifre et tambour enjoués et ludiques. Une mélodie animée et emblématique de la jeune Amérique."
+      },
+      "ode_to_joy": {
+        "name": "Ode à la Joie",
+        "description": "Mélodie grandiose et triomphante au piano. Un thème puissant et édifiant de célébration universelle."
+      },
+      "flight_of_the_bumblebee": {
+        "name": "Vol du Bourdon",
+        "description": "Tourbillon bourdonnant et rapide ! Vitesse instrumentale incroyable imitant un insecte frénétique et furieux."
+      },
+      "the_generals_edict": {
+        "name": "L'Édit du Général",
+        "description": "Suona perçante, cymbales fracassantes ! L'ordre urgent d'un général résonne sur un champ de bataille dramatique."
+      }
+    }
+  }
+} 

@@ -1,0 +1,2854 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport">
+    <meta content="$ilp.uphold.com/zDFj9FWE4m6e" name="monetization">
+    <title>SPACEBAR CLICKER</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&family=Roboto+Mono:wght@400;500;600&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+/* 商城样式 */
+#shop {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 600px;
+    height: 80vh;
+    max-height: 700px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    z-index: 2000;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid var(--main-color);
+}
+
+#shop-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: var(--main-color);
+    color: white;
+}
+
+#shop-header h2 {
+    margin: 0;
+    font-size: 1.5em;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#close-shop-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2em;
+    cursor: pointer;
+    padding: 0 5px;
+    line-height: 1;
+}
+#close-shop-btn:hover {
+    opacity: 0.8;
+}
+
+#shop-tabs {
+    display: flex;
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ddd;
+}
+
+.shop-tab {
+    flex-grow: 1;
+    padding: 12px 10px;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    font-size: 0.95em;
+    font-weight: 500;
+    color: var(--text-color);
+    transition: background-color 0.2s, color 0.2s;
+    border-bottom: 3px solid transparent;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.shop-tab:hover {
+    background-color: #e9e9e9;
+    color: var(--main-color);
+}
+
+.shop-tab.active {
+    background-color: #fff;
+    color: var(--main-color);
+    border-bottom-color: var(--highlight-color);
+    font-weight: 600;
+}
+
+#shop-content {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 15px;
+    background-color: var(--background-color);
+}
+
+/* 音乐页面卡片特殊样式 */
+.music-items-wrapper {
+    display: flex;
+    flex-direction: column !important; /* 强制纵向排列 */
+    gap: 10px;
+}
+
+.music-shop-item {
+    width: 100% !important; /* 强制占满整行 */
+    margin-bottom: 10px !important;
+    min-height: 75px !important;
+}
+
+.music-shop-item .shop-item-image {
+    width: 60px !important; /* 更大的图标 */
+    height: 60px !important;
+}
+
+.music-shop-item .shop-item-use,
+.music-shop-item .shop-item-buy {
+    width: auto !important; /* 按钮宽度自适应 */
+    min-width: 80px; /* 设置最小宽度 */
+    font-size: 0.75em !important; /* 更小的字体 */
+    padding: 4px 10px !important; /* 更小的内边距 */
+}
+
+.music-shop-item .shop-item-details h3 {
+    font-size: 1em; /* Further reduced */
+    margin: 0 0 3px 0; /* Further reduced margin */
+    color: var(--main-color);
+    font-family: 'Montserrat', sans-serif;
+    white-space: nowrap; /* Prevent wrapping */
+    overflow: hidden; /* Hide overflow */
+    text-overflow: ellipsis; /* Add ellipsis if text overflows */
+}
+
+.music-shop-item .shop-item-details p {
+    max-height: none !important;
+    -webkit-line-clamp: initial !important; 
+    overflow: visible !important;
+    margin-bottom: 6px !important;
+    color: #555 !important;
+    line-height: 1.3 !important;
+    font-size: 0.7em; /* Further reduced */
+}
+
+.shop-item {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+    border: 1px solid #e0e0e0;
+    min-height: 65px;
+    max-height: 200px;
+    overflow: hidden;
+    margin-bottom: 12px;
+    width: calc(50% - 6px);
+    box-sizing: border-box;
+}
+.shop-item.active { /* 用于标记当前正在使用的物品 */
+    border: 2px solid var(--highlight-color);
+    box-shadow: 0 0 10px var(--highlight-color);
+}
+
+.shop-item-image {
+    width: 50px;  /* Further reduced width for image */
+    height: 50px; /* Further reduced height for image */
+    flex-shrink: 0; /* Prevent image from shrinking */
+    background-color: #f0f0f0;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-top: 6px;
+    margin-right: 10px; /* Spacing between image and details */
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+/* New class for text content next to the image */
+.shop-item-details {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Takes remaining space */
+    justify-content: space-between; /* Pushes footer to bottom if item is tall */
+    height: 100%; /* Allow footer to stick to bottom */
+    padding: 0; /* Removed padding */
+}
+
+.shop-item h3 {
+    font-size: 0.9em; /* Further reduced */
+    margin: 0 0 3px 0; /* Further reduced margin */
+    color: var(--main-color);
+    font-family: 'Montserrat', sans-serif;
+    white-space: nowrap; /* Prevent wrapping */
+    overflow: hidden; /* Hide overflow */
+    text-overflow: ellipsis; /* Add ellipsis if text overflows */
+}
+
+.shop-item p {
+    font-size: 0.7em; /* Further reduced */
+    color: #555;
+    margin: 0 0 7px 0; /* Further reduced margin */
+    line-height: 1.4; /* Further reduced line-height */
+    flex-grow: 1; /* Allows description to take available space before footer */
+    max-height: 6em; /* Limit to 2 lines */
+    overflow: hidden; /* Hide overflow */
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Limit to 2 lines */
+    -webkit-box-orient: vertical;
+}
+
+.shop-item-footer {
+    margin-top: 3px; /* Reduced from auto */
+    width: 100%; /* Ensure footer takes full width of details */
+}
+
+.shop-item-price {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Changed to left-aligned */
+    margin-bottom: 5px; /* Reduced from 10px */
+    font-size: 1em; /* Reduced from 1.2em */
+    font-weight: 600;
+    color: var(--secondary-color);
+}
+.shop-item-price .spacebar { /* 确保商店价格旁边的空格图标正确显示 */
+    padding-right: 15px; /* 减小大小 */
+    margin-right: 2px;
+    transform: scale(0.7); /* 缩小 */
+}
+
+
+.shop-item-buy, .shop-item-use {
+    width: 100%;
+    padding: 5px; /* Reduced padding */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.8em; /* Reduced font size */
+    transition: background-color 0.2s;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.shop-item-buy {
+    background-color: var(--highlight-color);
+    color: white;
+}
+.shop-item-buy:hover {
+    background-color: #e6ac00; /* darken highlight color */
+}
+.shop-item-buy:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.shop-item-use {
+    background-color: var(--secondary-color);
+    color: white;
+}
+.shop-item-use:hover {
+    background-color: #0091a1; /* darken secondary color */
+}
+.shop-item-use:disabled { /* 用于 "Using" 状态 */
+    background-color: #aaa;
+    color: #eee;
+    cursor: default;
+}
+
+/* 响应式调整 */
+@media (max-width: 600px) {
+    #shop {
+        width: 95%;
+        height: 90vh;
+    }
+    #shop-content {
+        padding: 10px;
+    }
+    .shop-item {
+        width: 100%;
+        min-height: 70px;
+        padding: 8px;
+        margin-bottom: 10px;
+    }
+    .shop-item-image {
+        width: 50px;
+        height: 50px;
+        margin-right: 8px;
+    }
+    
+    /* 移动设备上的音乐卡片 */
+    .music-shop-item .shop-item-image {
+        width: 55px !important;
+        height: 55px !important;
+    }
+    .music-shop-item .shop-item-use,
+    .music-shop-item .shop-item-buy {
+        min-width: 60px;
+        padding: 3px 8px !important;
+    }
+}
+    </style>
+    <style>
+        :root {
+            --main-color: #3949ab;
+            --secondary-color: #00acc1;
+            --background-color: #f5f5f5;
+            --highlight-color: #ffc107;
+            --text-color: #212121;
+            --error-color: #f44336;
+        }
+        
+        body {
+            user-select: none;
+            background-color: var(--background-color);
+            background-image: url("data:image/svg+xml,%3Csvg width='12' height='16' viewBox='0 0 12 16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 .99C4 .445 4.444 0 5 0c.552 0 1 .45 1 .99v4.02C6 5.555 5.556 6 5 6c-.552 0-1-.45-1-.99V.99zm6 8c0-.546.444-.99 1-.99.552 0 1 .45 1 .99v4.02c0 .546-.444-.99-1 .99-.552 0-1-.45-1-.99V8.99z' fill='%233949ab' fill-opacity='0.06' fill-rule='evenodd'/%3E%3C/svg%3E");
+            font-family: 'Open Sans', sans-serif;
+            overflow: hidden;
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        .hide {
+            display: none !important;
+        }
+
+        /* 主区域样式 */
+        #game {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: calc(100vh - 60px);
+        }
+
+        #header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        #counter {
+            text-align: center;
+            font-size: 8rem;
+            color: var(--main-color);
+            height: 8rem;
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        #counter span {
+            display: block;
+            text-align: center;
+        }
+
+        #per_second {
+            font-size: 1.5rem;
+            text-align: center;
+            margin-bottom: 1.2rem;
+            color: var(--main-color);
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        /* SpaceBar 按钮样式 */
+        .sbc {
+            margin-bottom: 30px;
+        }
+
+        .sbs {
+            display: block;
+            font-size: 1.2rem;
+            color: var(--text-color);
+            text-align: center;
+            text-decoration: none;
+            font-weight: 700;
+            letter-spacing: 10px;
+            padding-top: 30px;
+            padding-bottom: 10px;
+            font-family: 'Roboto Mono', monospace;
+            margin: 0 auto;
+            max-width: 300px;
+        }
+
+        /* Neon Skin */
+        .sb1.skin-neon {
+            background: linear-gradient(180deg, #2b044d 0%, #6a0dad 100%);
+            border-color: #ff00ff;
+            color: #00ffff;
+            font-family: 'Roboto Mono', monospace; /* Keep or adjust as needed */
+            text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 15px #00ffff;
+            box-shadow: 0 0 15px #ff00ff, inset 0 0 10px rgba(255, 0, 255, 0.5);
+        }
+
+        /* Retro Skin */
+        .sb1.skin-retro {
+            background: linear-gradient(180deg, #ffda79 0%, #ffa502 100%);
+            border-color: #cc8e35;
+            color: #7c2c0c;
+            font-family: 'Press Start 2P', 'Roboto Mono', monospace;
+            text-shadow: 2px 2px 0 #fff, -1px -1px 0 #a0522d; /* Added subtle shadow for depth */
+            box-shadow: 3px 3px 0 #7c2c0c, inset 0px 0px 5px rgba(255,255,255,0.3);
+            border-width: 2px; /* Slightly thinner border for retro feel */
+            border-bottom-width: 4px;
+        }
+        .sb1.skin-retro:active, .sb_active.skin-retro {
+            border-bottom-width: 2px;
+            padding-top: 31px; /* Adjust based on border change */
+        }
+
+
+        /* Cyber Skin */
+        .sb1.skin-cyber {
+            background: linear-gradient(45deg, #0a0a0a 0%, #222 100%);
+            border-color: #00ff41;
+            color: #00ff41;
+            font-family: 'Roboto Mono', monospace;
+            text-shadow: 0 0 3px #00ff41, 0 0 6px #00ff41, 0 0 9px #00ff41;
+            box-shadow: 0 0 12px rgba(0, 255, 65, 0.7), inset 0 0 8px rgba(0, 255, 65, 0.3);
+            border-width: 2px;
+            border-bottom-width: 4px;
+        }
+         .sb1.skin-cyber:active, .sb_active.skin-cyber {
+            border-bottom-width: 2px;
+            padding-top: 31px; /* Adjust based on border change */
+        }
+
+        .sb1:hover {
+            /* background: linear-gradient(180deg, #ffffff 0, #f5f5f5 100%); */ /* Removed background change on hover */
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        .sb1 {
+            border: 3px solid var(--main-color);
+            border-bottom-width: 6px;
+            color: var(--main-color);
+            border-radius: 10px;
+            /*transition: transform 80ms ease-in, box-shadow 80ms ease-in; */ /* Original, causing issues with layout shifts */
+            transition: transform 80ms ease-in, box-shadow 80ms ease-in, background 80ms ease-in, color 80ms ease-in; /* Explicit transitions */
+            background: var(--background-color);
+            background: linear-gradient(180deg, #ffffff 0, #f0f0f0 100%);
+            font-family: 'Roboto Mono', monospace;
+            text-shadow: none;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .sb1:active,
+        .sb_active {
+            border-color: var(--main-color);
+            border-bottom-width: 3px;
+            padding-top: 33px;
+            transform: translateY(3px) scale(0.98);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            /*transition: transform 10ms ease-in, box-shadow 10ms ease-in;*/ /* Original */
+            transition: transform 10ms ease-in, box-shadow 10ms ease-in, background 10ms ease-in, color 10ms ease-in; /* Explicit transitions, no padding/border */
+        }
+
+        /* 游戏项目区域样式 */
+        #items-container {
+            flex: 1;
+            overflow-y: auto;
+            margin-bottom: 30px;
+        }
+
+        #items-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+            gap: 15px;
+            padding: 15px;
+            /* margin-bottom: 20px; */ /* This will be included in the margin shorthand */
+            max-width: 60%; /* New: To make the grid narrower */
+            margin: 0 auto 20px; /* New: To center the grid and maintain bottom margin */
+        }
+
+        .item-icon {
+            position: relative;
+            width: 80px;
+            height: 80px;
+            border-radius: 10px;
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: all 0.2s ease;
+            opacity: 0.7;
+            border: 1px solid rgba(57, 73, 171, 0.2);
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            /* overflow: hidden; */ /* Removed to allow tooltip visibility */
+        }
+
+        .item-fallback-text {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--main-color);
+            opacity: 0.6;
+            text-transform: uppercase;
+            background: linear-gradient(45deg, rgba(57, 73, 171, 0.1), rgba(0, 172, 193, 0.1));
+            border-radius: 8px;
+        }
+
+        /* 添加项目图标不同状态下的样式 */
+        .item-icon.keyboard_upgrade {
+            background-color: #e8f5e9;
+        }
+
+        .item-icon.monkey {
+            background-color: #fff8e1;
+        }
+
+        .item-icon.laser_gun, 
+        .item-icon.nuclear_gun {
+            background-color: #ffebee;
+        }
+
+        /* 项目购买动画效果 */
+        @keyframes itemPurchased {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .item-purchased {
+            animation: itemPurchased 0.4s ease-out;
+        }
+
+        /* 波纹动画效果 */
+        @keyframes rippleEffect {
+            to {
+                transform: scale(1.5);
+                opacity: 0;
+            }
+        }
+
+        .item-ripple {
+            position: absolute;
+            border-radius: 50%;
+            transform: scale(0);
+            animation: rippleEffect 0.6s linear;
+            background-color: rgba(255, 193, 7, 0.4);
+        }
+
+        .item-icon.buyable {
+            opacity: 1;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+            border: 1px solid rgba(57, 73, 171, 0.3);
+            background-color: #f9f9f9;
+        }
+
+        .item-icon:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+            z-index: 1; /* 添加z-index使悬停的图标显示在其他图标上面 */
+        }
+
+        .item-icon:active {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .item-count {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background-color: var(--highlight-color);
+            color: white;
+            border-radius: 50%;
+            width: 22px;
+            height: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 12px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .item-tooltip {
+            position: absolute;
+            width: 280px;
+            background: white;
+            top: 90px;
+            left: 50%;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            pointer-events: none;
+            text-align: left;
+            border: 1px solid var(--main-color);
+
+            /* JS controlled properties & initial hidden state: */
+            opacity: 0;
+            visibility: hidden;
+            transform: translateX(-50%) translateY(10px); /* Initial hidden state */
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+
+        .item-title {
+            color: var(--main-color);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            margin: 0 0 8px 0;
+        }
+
+        .item-description {
+            font-size: 13px;
+            margin-bottom: 8px; /* 从10px减小到8px */
+            line-height: 1.3; /* 从1.4减小到1.3，减小整体高度 */
+            color: var(--text-color);
+        }
+
+        .item-price {
+            display: flex;
+            align-items: center;
+            margin-top: 8px;
+        }
+
+        .item-cost {
+            color: var(--secondary-color);
+            font-weight: 600;
+        }
+
+        .spacebar {
+            display: inline !important;
+            background: var(--background-color);
+            background: linear-gradient(180deg, var(--background-color) 0, var(--secondary-color) 100%);
+            border: 2px solid var(--main-color);
+            border-bottom-width: 3px;
+            color: var(--text-color);
+            border-radius: 8px;
+            padding: 0;
+            padding-right: 30px;
+            margin-right: 5px;
+            font-family: 'Roboto Mono', monospace;
+        }
+
+        /* 功能按钮区域样式 */
+        #function-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background-color: var(--main-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+
+        .function-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            cursor: pointer;
+            transition: transform 0.2s;
+            border: none;
+            padding: 0;
+        }
+
+        .function-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .function-btn:active {
+            transform: scale(0.95);
+        }
+
+        .function-btn svg {
+            width: 24px;
+            height: 24px;
+            fill: var(--main-color);
+        }
+
+        /* 保留原有的粒子和分数样式 */
+        .particle {
+            width: auto;
+            position: absolute;
+            pointer-events: none;
+            left: 0;
+            right: 0;
+        }
+
+        .score {
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: var(--highlight-color);
+            text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+            z-index: 100;
+        }
+
+        .spacebar_particle {
+            pointer-events: none;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: -100;
+            width: 5px;
+            height: 15px;
+            opacity: 0.7;
+        }
+
+        /* 响应式布局 */
+        @media (max-width: 768px) {
+            #counter {
+                font-size: 5rem;
+                height: 5rem;
+            }
+
+            #per_second {
+                font-size: 1.2rem;
+            }
+
+            #items-grid {
+                grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+                gap: 10px;
+            }
+
+            .item-icon {
+                width: 70px;
+                height: 70px;
+            }
+
+            #function-bar {
+                height: 50px;
+                gap: 15px;
+            }
+
+            .function-btn {
+                width: 35px;
+                height: 35px;
+            }
+
+            .function-btn svg {
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #game {
+                padding: 10px;
+            }
+
+            #counter {
+                font-size: 4rem;
+                height: 4rem;
+            }
+
+            #items-grid {
+                grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+                gap: 8px;
+                padding: 8px;
+            }
+
+            .item-icon {
+                width: 60px;
+                height: 60px;
+            }
+
+            .item-tooltip {
+                width: 180px;
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="game">
+        <!-- 主区域 -->
+        <div id="header">
+            <div id="counter"><span>0</span></div>
+            <div id="per_second">0</div>
+            <div class="sbc">
+                <div class="sbs sb1" id="sb">SPACEBAR</div>
+            </div>
+        </div>
+        
+        <!-- 游戏项目区域 -->
+        <div id="items-container">
+            <div id="items-grid">
+                <!-- 项目图标将通过JS动态生成 -->
+            </div>
+        </div>
+    </div>
+
+    <!-- 功能按钮区域 -->
+    <div id="function-bar">
+        <button id="reset-btn" class="function-btn" title="Reset Game">
+            <svg viewBox="0 0 24 24"><path d="M17.65 6.35A7.958 7.958 0 0012 4c-4.42 0-8 3.58-8 8s3.58 8 8 8c3.73 0 6.84-2.55 7.73-6h-2.08A5.99 5.99 0 0112 18c-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/></svg>
+        </button>
+        <button id="sound-btn" class="function-btn" title="Toggle Sound">
+            <svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+        </button>
+        <button id="music-btn" class="function-btn" title="Toggle Music">
+            <svg viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+        </button>
+        <button id="shop-btn" class="function-btn" title="Shop">
+            <svg viewBox="0 0 24 24"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg>
+        </button>
+    </div>
+
+    <!-- 商城弹出层 -->
+    <div id="shop" class="hide">
+      <div id="shop-header">
+        <h2 id="shop-title">Shop</h2>
+        <button id="close-shop-btn">&times;</button>
+      </div>
+      <div id="shop-tabs">
+        <button class="shop-tab active" data-tab="sounds" id="shop-tab-sounds">Sounds</button>
+        <button class="shop-tab" data-tab="music" id="shop-tab-music">Music</button>
+        <button class="shop-tab" data-tab="skins" id="shop-tab-skins">Skins</button>
+        <button class="shop-tab" data-tab="backgrounds" id="shop-tab-backgrounds">Backgrounds</button>
+      </div>
+      <div id="shop-content">
+        <!-- 商品将在这里通过JS动态生成 -->
+      </div>
+    </div>
+
+    <script>
+        // 多语言支持函数
+        function getLocale() {
+            // 检查URL参数
+            const urlParams = new URLSearchParams(window.location.search);
+            const localeParam = urlParams.get('locale');
+            
+            if (localeParam) {
+                localStorage.setItem('spacebar_locale', localeParam);
+                return localeParam;
+            }
+            
+            // 从本地存储加载
+            const savedLocale = localStorage.getItem('spacebar_locale');
+            if (savedLocale) {
+                return savedLocale;
+            }
+            
+            // 默认英文
+            return 'en';
+        }
+
+        // 初始化当前语言
+        let currentLocale = getLocale();
+
+        // 加载多语言文本
+        let strings = {};
+        
+        async function loadStrings() {
+            const url = `message/${currentLocale}/strings.json`;
+            return fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    strings = data;
+                    updateUIText();
+                })
+                .catch(error => {
+                    console.error('Error loading language strings:', error);
+                    // 出错时加载英文作为后备
+                    if (currentLocale !== 'en') {
+                        currentLocale = 'en';
+                        return loadStrings();
+                    }
+                    return Promise.resolve();
+                });
+        }
+
+        function updateUIText() {
+            // 更新游戏标题
+            document.title = getText('game.title', 'SPACEBAR CLICKER');
+            
+            // 更新主要UI元素
+            if (strings.game) {
+                document.getElementById('sb').textContent = getText('game.spacebar_text', 'SPACEBAR');
+                
+                // 更新功能按钮标题
+                document.getElementById('reset-btn').setAttribute('title', getText('game.reset_button', 'Reset Game'));
+                document.getElementById('sound-btn').setAttribute('title', getText('ui.sound_button', 'Toggle Sound'));
+                document.getElementById('music-btn').setAttribute('title', getText('ui.music_button', 'Toggle Music'));
+                document.getElementById('shop-btn').setAttribute('title', getText('ui.shop_button', 'Shop'));
+
+                // 更新商店UI文本
+                const shopTitle = gId('shop-title');
+                if (shopTitle) shopTitle.textContent = getText('ui.shop.title', 'Shop');
+                
+                const shopTabSkins = gId('shop-tab-skins');
+                if (shopTabSkins) shopTabSkins.textContent = getText('ui.shop.tabs.skins', 'Skins');
+                
+                const shopTabBackgrounds = gId('shop-tab-backgrounds');
+                if (shopTabBackgrounds) shopTabBackgrounds.textContent = getText('ui.shop.tabs.backgrounds', 'Backgrounds');
+                
+                const shopTabSounds = gId('shop-tab-sounds');
+                if (shopTabSounds) shopTabSounds.textContent = getText('ui.shop.tabs.sounds', 'Sounds');
+                
+                const shopTabMusic = gId('shop-tab-music');
+                if (shopTabMusic) shopTabMusic.textContent = getText('ui.shop.tabs.music', 'Music');
+                
+                // 添加皮肤选择器（如果不存在）
+                if (!document.getElementById('theme-selector') && strings.ui?.spacebar_theme) {
+                    const themeSelector = document.createElement('div');
+                    themeSelector.id = 'theme-selector';
+                    themeSelector.style.textAlign = 'center';
+                    themeSelector.style.marginBottom = '15px';
+                    themeSelector.style.marginTop = '15px';
+                    
+                    // 添加皮肤标题
+                    const themeTitle = document.createElement('div');
+                    themeTitle.textContent = getText('ui.spacebar_theme_title', 'Spacebar Theme');
+                    themeTitle.style.color = 'var(--main-color)';
+                    themeTitle.style.fontWeight = 'bold';
+                    themeTitle.style.marginBottom = '8px';
+                    themeTitle.style.fontFamily = "'Montserrat', sans-serif";
+                    themeSelector.appendChild(themeTitle);
+                    
+                    // 添加皮肤选项
+                    const themeOptions = document.createElement('div');
+                    themeOptions.style.display = 'flex';
+                    themeOptions.style.justifyContent = 'center';
+                    themeOptions.style.gap = '10px';
+                    
+                    // 为每种皮肤创建按钮
+                    Object.entries(strings.ui.spacebar_theme).forEach(([key, value]) => {
+                        const themeBtn = document.createElement('button');
+                        themeBtn.textContent = value;
+                        themeBtn.className = 'theme-btn';
+                        themeBtn.dataset.theme = key;
+                        themeBtn.style.padding = '5px 10px';
+                        themeBtn.style.borderRadius = '4px';
+                        themeBtn.style.backgroundColor = 'var(--background-color)';
+                        themeBtn.style.border = '1px solid var(--main-color)';
+                        themeBtn.style.color = 'var(--main-color)';
+                        themeBtn.style.cursor = 'pointer';
+                        themeBtn.style.fontFamily = "'Open Sans', sans-serif";
+                        themeBtn.style.transition = 'all 0.2s ease';
+                        
+                        themeBtn.addEventListener('mouseenter', function() {
+                            this.style.backgroundColor = 'var(--main-color)';
+                            this.style.color = 'white';
+                        });
+                        
+                        themeBtn.addEventListener('mouseleave', function() {
+                            if (!this.classList.contains('active-theme')) {
+                                this.style.backgroundColor = 'var(--background-color)';
+                                this.style.color = 'var(--main-color)';
+                            }
+                        });
+                        
+                        themeBtn.addEventListener('click', function() {
+                            document.querySelectorAll('.theme-btn').forEach(btn => {
+                                btn.classList.remove('active-theme');
+                                btn.style.backgroundColor = 'var(--background-color)';
+                                btn.style.color = 'var(--main-color)';
+                            });
+                            this.classList.add('active-theme');
+                            this.style.backgroundColor = 'var(--main-color)';
+                            this.style.color = 'white';
+                            game.setSpacebarTheme(key);
+                        });
+                        
+                        themeOptions.appendChild(themeBtn);
+                    });
+                    
+                    themeSelector.appendChild(themeOptions);
+                    
+                    // 激活默认皮肤
+                    setTimeout(() => {
+                        const defaultTheme = document.querySelector('.theme-btn[data-theme="default"]');
+                        if (defaultTheme) defaultTheme.click();
+                    }, 100);
+                }
+            }
+        }
+
+        // 获取本地化文本
+        function getText(key, defaultText) {
+            // 支持点表示法访问嵌套属性，例如 'game.title'
+            const parts = key.split('.');
+            let value = strings;
+            
+            try {
+                for (const part of parts) {
+                    value = value[part];
+                    if (value === undefined) return defaultText;
+                }
+                return value || defaultText;
+            } catch (e) {
+                return defaultText;
+            }
+        }
+
+        // jsfxr 音频合成
+        function SfxrParams() {
+            this.setSettings = function(r) {
+                for (var a = 0; a < 24; a++) this[String.fromCharCode(97 + a)] = r[a] || 0;
+                this.c < .01 && (this.c = .01);
+                var t = this.b + this.c + this.e;
+                if (t < .18) {
+                    var e = .18 / t;
+                    this.b *= e, this.c *= e, this.e *= e
+                }
+            }
+        }
+
+        function SfxrSynth() {
+            var r, a, t, e, s, n, i, h, f, c, o, v;
+            this._params = new SfxrParams, this.reset = function() {
+                var r = this._params;
+                e = 100 / (r.f * r.f + .001), s = 100 / (r.g * r.g + .001), n = 1 - r.h * r.h * r.h * .01, i = -r.i * r.i * r.i * 1e-6, r.a || (o = .5 - r.n / 2, v = 5e-5 * -r.o), h = 1 + r.l * r.l * (r.l > 0 ? -.9 : 10), f = 0, c = 1 == r.m ? 0 : (1 - r.m) * (1 - r.m) * 2e4 + 32
+            }, this.totalReset = function() {
+                this.reset();
+                var e = this._params;
+                return r = e.b * e.b * 1e5, a = e.c * e.c * 1e5, t = e.e * e.e * 1e5 + 12, 3 * ((r + a + t) / 3 | 0)
+            }, this.synthWave = function(u, b) {
+                var w = this._params,
+                    m = 1 != w.s || w.v,
+                    y = w.v * w.v * .1,
+                    g = 1 + 3e-4 * w.w,
+                    k = w.s * w.s * w.s * .1,
+                    S = 1 + 1e-4 * w.t,
+                    l = 1 != w.s,
+                    p = w.x * w.x,
+                    d = w.g,
+                    x = w.q || w.r,
+                    A = w.r * w.r * w.r * .2,
+                    q = w.q * w.q * (w.q < 0 ? -1020 : 1020),
+                    M = w.p ? 32 + ((1 - w.p) * (1 - w.p) * 2e4 | 0) : 0,
+                    _ = w.d,
+                    U = w.j / 2,
+                    j = w.k * w.k * .01,
+                    C = w.a,
+                    P = r,
+                    R = 1 / r,
+                    W = 1 / a,
+                    z = 1 / t,
+                    B = 5 / (1 + w.u * w.u * 20) * (.01 + k);
+                B > .8 && (B = .8), B = 1 - B;
+                for (var D, E, F, G, H, I, J = !1, K = 0, L = 0, N = 0, O = 0, Q = 0, T = 0, V = 0, X = 0, Y = 0, Z = 0, $ = new Array(1024), rr = new Array(32), ar = $.length; ar--;) $[ar] = 0;
+                for (ar = rr.length; ar--;) rr[ar] = 2 * Math.random() - 1;
+                for (ar = 0; ar < b; ar++) {
+                    if (J) return ar;
+                    if (M && ++Y >= M && (Y = 0, this.reset()), c && ++f >= c && (c = 0, e *= h), (e *= n += i) > s && (e = s, d > 0 && (J = !0)), E = e, U > 0 && (Z += j, E *= 1 + Math.sin(Z) * U), (E |= 0) < 8 && (E = 8), C || ((o += v) < 0 ? o = 0 : o > .5 && (o = .5)), ++L > P) switch (L = 0, ++K) {
+                        case 1:
+                            P = a;
+                            break;
+                        case 2:
+                            P = t
+                    }
+                    switch (K) {
+                        case 0:
+                            N = L * R;
+                            break;
+                        case 1:
+                            N = 1 + 2 * (1 - L * W) * _;
+                            break;
+                        case 2:
+                            N = 1 - L * z;
+                            break;
+                        case 3:
+                            N = 0, J = !0
+                    }
+                    x && ((F = 0 | (q += A)) < 0 ? F = -F : F > 1023 && (F = 1023)), m && g && ((y *= g) < 1e-5 ? y = 1e-5 : y > .1 && (y = .1)), I = 0;
+                    for (var tr = 8; tr--;) {
+                        if (++V >= E && (V %= E, 3 == C))
+                            for (var er = rr.length; er--;) rr[er] = 2 * Math.random() - 1;
+                        switch (C) {
+                            case 0:
+                                H = V / E < o ? .5 : -.5;
+                                break;
+                            case 1:
+                                H = 1 - V / E * 2;
+                                break;
+                            case 2:
+                                H = .225 * (((H = 1.27323954 * (G = 6.28318531 * ((G = V / E) > .5 ? G - 1 : G)) + .405284735 * G * G * (G < 0 ? 1 : -1)) < 0 ? -1 : 1) * H * H - H) + H;
+                                break;
+                            case 3:
+                                H = rr[Math.abs(32 * V / E | 0)]
+                        }
+                        m && (D = T, (k *= S) < 0 ? k = 0 : k > .1 && (k = .1), l ? (Q += (H - T) * k, Q *= B) : (T = H, Q = 0), O += (T += Q) - D, H = O *= 1 - y), x && ($[X % 1024] = H, H += $[(X - F + 1024) % 1024], X++), I += H
+                    }
+                    I *= .125 * N * p, u[ar] = I >= 1 ? 32767 : I <= -1 ? -32768 : 32767 * I | 0
+                }
+                return b
+            }
+        }
+
+        var synth = new SfxrSynth;
+        window.jsfxr = function(r) {
+            synth._params.setSettings(r);
+            var a = synth.totalReset(),
+                t = new Uint8Array(4 * ((a + 1) / 2 | 0) + 44),
+                e = 2 * synth.synthWave(new Uint16Array(t.buffer, 44), a),
+                s = new Uint32Array(t.buffer, 0, 44);
+            s[0] = 1179011410, s[1] = e + 36, s[2] = 1163280727, s[3] = 544501094, s[4] = 16, s[5] = 65537, s[6] = 44100, s[7] = 88200, s[8] = 1048578, s[9] = 1635017060, s[10] = e, e += 44;
+            for (var n = 0, i = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/", h = "data:audio/wav;base64,"; n < e; n += 3) {
+                var f = t[n] << 16 | t[n + 1] << 8 | t[n + 2];
+                h += i[f >> 18] + i[f >> 12 & 63] + i[f >> 6 & 63] + i[63 & f]
+            }
+            return h
+        };
+
+        // 辅助函数
+        const gId = e => document.getElementById(e),
+            qSel = e => document.querySelector(e),
+            qSelA = e => document.querySelectorAll(e),
+            cEl = e => {
+                let t = document.createElement("template");
+                return t.innerHTML = e, t.content.firstChild
+            },
+            repltxt = (e, t) => (t.forEach((t, n) => e = e.replace("%" + (n + 1), t)), e),
+            clamp = (e, t, n) => Math.min(Math.max(e, t), n),
+            clamp01 = e => clamp(e, 0, 1),
+            lerp = (e, t, n) => e + (t - e) * clamp01(n),
+            NUBMER_FORMATS = ["M", "B", "T", "Q", "Qui", "S", "Sp"],
+            fmt = (e, t) => (t + e).slice(-t.length),
+            nfmt = e => Math.floor(e).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","),
+            nfmt1 = e => e.toFixed(3).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","),
+            nfmt2 = e => {
+                if (e < 1e6) return nfmt(e);
+                let t = 1e6;
+                for (let n in NUBMER_FORMATS)
+                    if (e < (t *= 1e3)) return nfmt1(e / (t / 1e3)) + NUBMER_FORMATS[n]
+            },
+            randnum = (e = 1) => Math.random() * e,
+            randint = e => Math.round(randnum(e)),
+            randsig = () => randint(10) % 2 == 0 ? 1 : -1,
+            randweight = (e, t) => {
+                let n = e.map(t).reduce((e, t) => e + t),
+                    a = randint(n);
+                return e.filter(e => (a -= t(e)) <= 0)[0]
+            },
+            randweightsqrd = (e, t) => randweight(e, e => t(e) * t(e)),
+            co = e => {
+                let t = e();
+                const n = () => {
+                    let e = t.next();
+                    e.done || setTimeout(n, 1e3 * e.value)
+                };
+                n()
+            },
+            mobile = () => navigator.userAgent.match("Mobile");
+
+        // ============== SHOP SYSTEM CODE START ==============
+
+        // 商品数据定义 (modified for localization)
+        const SHOP_ITEMS = {
+          sounds: [
+            { id: 'default', sound_file: 'default.wav', price: 0, name_key: 'shop.sounds.default.name', description_key: 'shop.sounds.default.description' },
+            { id: 'mechanical', sound_file: 'mechanical.mp3', price: 20, name_key: 'shop.sounds.mechanical.name', description_key: 'shop.sounds.mechanical.description' },
+            { id: 'bubble', sound_file: 'bubble.wav', price: 30, name_key: 'shop.sounds.bubble.name', description_key: 'shop.sounds.bubble.description' },
+            { id: 'slap', sound_file: 'slap.wav', price: 50, name_key: 'shop.sounds.slap.name', description_key: 'shop.sounds.slap.description' },
+            { id: 'cheer', sound_file: 'cheer.mp3', price: 90, name_key: 'shop.sounds.cheer.name', description_key: 'shop.sounds.cheer.description' },
+            { id: 'electric_current', sound_file: 'electric_current.wav', price: 150, name_key: 'shop.sounds.electric_current.name', description_key: 'shop.sounds.electric_current.description' },
+            { id: 'explosion', sound_file: 'explosion.mp3', price: 300, name_key: 'shop.sounds.explosion.name', description_key: 'shop.sounds.explosion.description' },
+            { id: 'water_droplet', sound_file: 'water_droplet.mp3', price: 600, name_key: 'shop.sounds.water_droplet.name', description_key: 'shop.sounds.water_droplet.description' },
+            { id: 'man_laugh', sound_file: 'man_laugh.mp3', price: 900, name_key: 'shop.sounds.man_laugh.name', description_key: 'shop.sounds.man_laugh.description' },
+            { id: 'samsung_galaxy_whistle_notification', sound_file: 'samsung_galaxy_whistle_notification.mp3', price: 1200, name_key: 'shop.sounds.samsung_galaxy_whistle_notification.name', description_key: 'shop.sounds.samsung_galaxy_whistle_notification.description' },
+            { id: 'cough', sound_file: 'cough.mp3', price: 2000, name_key: 'shop.sounds.cough.name', description_key: 'shop.sounds.cough.description' }
+            // { id: 'typewriter', sound_file: 'typewriter.wav', price: 3000, name_key: 'shop.sounds.typewriter.name', description_key: 'shop.sounds.typewriter.description' }, // Example for more items
+            // { id: 'laser', sound_file: 'laser.wav', price: 5000, name_key: 'shop.sounds.laser.name', description_key: 'shop.sounds.laser.description' } // Example for more items
+          ],
+          music: [
+            { id: 'default', music_file: 'default.mp3', price: 0, name_key: 'shop.music.default.name', description_key: 'shop.music.default.description' },
+            { id: 'rising_higher_step_by_step', music_file: 'rising_higher_step_by_step.ogg', price: 10, name_key: 'shop.music.rising_higher_step_by_step.name', description_key: 'shop.music.rising_higher_step_by_step.description' },
+            { id: 'crazy_dave', music_file: 'crazy_dave.ogg', price: 20, name_key: 'shop.music.crazy_dave.name', description_key: 'shop.music.crazy_dave.description' },
+            { id: 'cool_cat_jazz', music_file: 'cool_cat_jazz.mp3', price: 30, name_key: 'shop.music.cool_cat_jazz.name', description_key: 'shop.music.cool_cat_jazz.description' },
+            { id: 'dance_of_the_golden_snake', music_file: 'dance_of_the_golden_snake.mp3', price: 50, name_key: 'shop.music.dance_of_the_golden_snake.name', description_key: 'shop.music.dance_of_the_golden_snake.description' },
+            { id: 'ode_to_joy', music_file: 'ode_to_joy.ogg', price: 80, name_key: 'shop.music.ode_to_joy.name', description_key: 'shop.music.ode_to_joy.description' },
+            { id: 'flight_of_the_bumblebee', music_file: 'flight_of_the_bumblebee.ogg', price: 100, name_key: 'shop.music.flight_of_the_bumblebee.name', description_key: 'shop.music.flight_of_the_bumblebee.description' },
+            { id: 'horse_racing', music_file: 'horse_racing.mp3', price: 200, name_key: 'shop.music.horse_racing.name', description_key: 'shop.music.horse_racing.description' },
+            { id: 'braniac_maniac', music_file: 'braniac_maniac.ogg', price: 400, name_key: 'shop.music.braniac_maniac.name', description_key: 'shop.music.braniac_maniac.description' },
+            { id: 'yankee_doodle', music_file: 'yankee_doodle.ogg', price: 800, name_key: 'shop.music.yankee_doodle.name', description_key: 'shop.music.yankee_doodle.description' },
+            { id: 'butterfly_lovers_violin_concerto', music_file: 'butterfly_lovers_violin_concerto.ogg', price: 1200, name_key: 'shop.music.butterfly_lovers_violin_concerto.name', description_key: 'shop.music.butterfly_lovers_violin_concerto.description' },
+            { id: 'the_generals_edict', music_file: 'the_generals_edict.ogg', price: 2000, name_key: 'shop.music.the_generals_edict.name', description_key: 'shop.music.the_generals_edict.description' }
+            // { id: 'retro_music', music_file: 'retro.mp3', price: 5000, name_key: 'shop.music.retro.name', description_key: 'shop.music.retro.description' }, // Example for more items, renamed to avoid conflict with skin
+            // { id: 'lofi', music_file: 'lofi.mp3', price: 7000, name_key: 'shop.music.lofi.name', description_key: 'shop.music.lofi.description' } // Example for more items
+          ],
+          skins: [
+            { id: 'default', price: 0, name_key: 'shop.skins.default.name', description_key: 'shop.skins.default.description' },
+            { id: 'neon', price: 50, name_key: 'shop.skins.neon.name', description_key: 'shop.skins.neon.description' },
+            { id: 'retro', price: 200, name_key: 'shop.skins.retro.name', description_key: 'shop.skins.retro.description' },
+            { id: 'cyber', price: 500, name_key: 'shop.skins.cyber.name', description_key: 'shop.skins.cyber.description' }
+            // { id: 'futuristic', price: 5000, name_key: 'shop.skins.futuristic.name', description_key: 'shop.skins.futuristic.description' }, // Example for more items
+            // { id: 'rainbow', price: 10000, name_key: 'shop.skins.rainbow.name', description_key: 'shop.skins.rainbow.description' } // Example for more items
+          ],
+          backgrounds: [
+            { id: 'default', price: 0, name_key: 'shop.backgrounds.default.name', description_key: 'shop.backgrounds.default.description' },
+            { id: 'blackboard', price: 20, name_key: 'shop.backgrounds.blackboard.name', description_key: 'shop.backgrounds.blackboard.description' },
+            { id: 'paper_texture', price: 30, name_key: 'shop.backgrounds.paper_texture.name', description_key: 'shop.backgrounds.paper_texture.description' },
+            { id: 'color_blocks', price: 60, name_key: 'shop.backgrounds.color_blocks.name', description_key: 'shop.backgrounds.color_blocks.description' },
+            { id: 'board', price: 100, name_key: 'shop.backgrounds.board.name', description_key: 'shop.backgrounds.board.description' },
+            { id: 'cartoon_starry_sky', price: 200, name_key: 'shop.backgrounds.cartoon_starry_sky.name', description_key: 'shop.backgrounds.cartoon_starry_sky.description' },
+            { id: 'beach', price: 500, name_key: 'shop.backgrounds.beach.name', description_key: 'shop.backgrounds.beach.description' },
+            { id: 'grassland', price: 1000, name_key: 'shop.backgrounds.grassland.name', description_key: 'shop.backgrounds.grassland.description' },
+            { id: 'ocean', price: 2000, name_key: 'shop.backgrounds.ocean.name', description_key: 'shop.backgrounds.ocean.description' },
+            // { id: 'city', price: 4000, name_key: 'shop.backgrounds.city.name', description_key: 'shop.backgrounds.city.description' }, // Example for more items
+            // { id: 'beach', price: 5000, name_key: 'shop.backgrounds.beach.name', description_key: 'shop.backgrounds.beach.description' } // Example for more items
+          ]
+        };
+        
+        // 首字母大写工具函数
+        function capitalize(str) {
+            if (!str) return '';
+            return str.charAt(0).toUpperCase() + str.slice(1);
+        }
+
+        // 初始化商城UI和事件
+        function initShopJS(gameInstance) {
+          const shopElement = gId('shop');
+          if (!shopElement) {
+            console.error("Shop element not found for initShopJS");
+            return;
+          }
+
+          // 设置标签页切换
+          const tabs = qSelA('.shop-tab');
+          tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+              const currentActiveTab = qSel('.shop-tab.active');
+              if (currentActiveTab) currentActiveTab.classList.remove('active');
+              tab.classList.add('active');
+              populateShopItems(tab.dataset.tab, gameInstance);
+            });
+          });
+          
+          // 关闭按钮
+          const closeBtn = gId('close-shop-btn');
+          if(closeBtn) {
+            closeBtn.addEventListener('click', () => {
+                shopElement.classList.add('hide');
+            });
+          } else {
+            console.error("Close shop button not found");
+          }
+        }
+
+        // 填充商城物品
+        function populateShopItems(category, gameInstance) {
+          const shopContent = gId('shop-content');
+          if (!shopContent) {
+            console.error("Shop content element not found");
+            return;
+          }
+          shopContent.innerHTML = '';
+          
+          const items = SHOP_ITEMS[category] || [];
+          if (items.length === 0) {
+            // 如果没有项目，显示一条提示信息
+            const emptyMessage = document.createElement('div');
+            emptyMessage.style.width = '100%';
+            emptyMessage.style.textAlign = 'center';
+            emptyMessage.style.padding = '20px';
+            emptyMessage.style.color = '#666';
+            emptyMessage.textContent = getText('ui.shop.empty', 'No items available in this category.');
+            shopContent.appendChild(emptyMessage);
+            return;
+          }
+          
+          // Ensure ownedItems for the category exists, defaulting to an empty array if not
+          const ownedItemsForCategory = (gameInstance.ownedItems && gameInstance.ownedItems[category]) ? gameInstance.ownedItems[category] : [];
+
+          let currentActiveItemId = '';
+          const categorySingular = category.slice(0, -1); // 'skins' -> 'skin'
+
+          // Determine currently active item for this category
+          // Make sure gameInstance properties are checked for existence
+          if (category === 'skins' && gameInstance.currentSkin) currentActiveItemId = gameInstance.currentSkin;
+          else if (category === 'backgrounds' && gameInstance.currentBackground) currentActiveItemId = gameInstance.currentBackground;
+          else if (category === 'sounds' && gameInstance.currentClickSound) currentActiveItemId = gameInstance.currentClickSound;
+          else if (category === 'music' && gameInstance.currentBgm) currentActiveItemId = gameInstance.currentBgm;
+
+          // 创建一个包装器，确保flex布局正确处理只有一个项目的情况
+          const wrapper = document.createElement('div');
+          wrapper.style.width = '100%';
+          wrapper.style.display = 'flex';
+          wrapper.style.flexWrap = 'wrap';
+          wrapper.style.justifyContent = 'space-between';
+          
+          // 为音乐页面添加特殊类名
+          if (category === 'music') {
+            wrapper.classList.add('music-items-wrapper');
+          }
+          
+          shopContent.appendChild(wrapper);
+
+          items.forEach(item => {
+            // 跳过无效项目
+            if (!item || !item.id) return;
+            
+            const itemDiv = document.createElement('div');
+            itemDiv.className = 'shop-item';
+            
+            // 为音乐项目添加特殊类名
+            if (category === 'music') {
+              itemDiv.classList.add('music-shop-item');
+            }
+            
+            if (item.id === currentActiveItemId) {
+              itemDiv.classList.add('active'); // Mark as active if it's the one currently used
+            }
+            
+            const owned = item.price === 0 || ownedItemsForCategory.includes(item.id);
+            const affordable = gameInstance.counter && gameInstance.counter.v >= item.price;
+            
+            let imagePath = `images/${category}/${item.id}.webp`;
+            // Fallback for default items if specific image doesn't exist - or rely on CSS for default item background
+            // if (item.id === 'default' && category === 'skins') imagePath = 'images/skins/default_fallback.webp'; // Example
+
+            itemDiv.innerHTML = `
+              <div class="shop-item-image" style="background-image: url('${imagePath}')"></div>
+              <div class="shop-item-details">
+                <h3>${getText(item.name_key, capitalize(item.id))}</h3>
+                <p>${getText(item.description_key, 'Description not available.')}</p>
+                <div class="shop-item-footer">
+                  ${owned ? 
+                    `<button class="shop-item-use" data-item-id="${item.id}" data-category="${category}">${item.id === currentActiveItemId ? getText('ui.shop.buttons.using', 'Using') : getText('ui.shop.buttons.use', 'Use')}</button>` :
+                    `<div class="shop-item-price">
+                      <span class="spacebar"></span>
+                      <span>${nfmt2(item.price)}</span>
+                    </div>
+                    <button class="shop-item-buy" data-item-id="${item.id}" data-category="${category}" ${affordable ? '' : 'disabled'}>${getText('ui.shop.buttons.buy', 'Buy')}</button>`
+                  }
+                </div>
+              </div>
+            `;
+            
+            if (owned) {
+              const useBtn = itemDiv.querySelector('.shop-item-use');
+              if (useBtn) {
+                if (item.id === currentActiveItemId) {
+                    useBtn.disabled = true; // Disable "Using" button if already active
+                } else {
+                  useBtn.addEventListener('click', (e) => {
+                      const itemId = e.target.dataset.itemId;
+                      const cat = e.target.dataset.category;
+                      switch(cat) {
+                          case 'skins': gameInstance.applySkin(itemId); break;
+                          case 'backgrounds': gameInstance.applyBackground(itemId); break;
+                          case 'sounds': gameInstance.applyClickSound(itemId); break;
+                          case 'music': gameInstance.applyBgm(itemId, 'shop'); break;
+                      }
+                      gameInstance.saveSettings(); 
+                      populateShopItems(cat, gameInstance); // Refresh to update "Using" button
+                  });
+                }
+              }
+            } else {
+              const buyBtn = itemDiv.querySelector('.shop-item-buy');
+              if (buyBtn) {
+                buyBtn.addEventListener('click', (e) => {
+                  const itemId = e.target.dataset.itemId;
+                  const cat = e.target.dataset.category;
+                  const currentItem = SHOP_ITEMS[cat].find(i => i.id === itemId);
+
+                  if (gameInstance.counter && gameInstance.counter.v >= currentItem.price) {
+                    gameInstance.counter.spend(currentItem.price);
+                    if (!gameInstance.ownedItems[cat]) {
+                      gameInstance.ownedItems[cat] = [];
+                    }
+                    if (!gameInstance.ownedItems[cat].includes(itemId)){
+                        gameInstance.ownedItems[cat].push(itemId);
+                    }
+                    gameInstance.saveOwnedItems();
+                    if(typeof playaudio === 'function' && SOUNDS && SOUNDS.buy) playaudio(SOUNDS.buy);
+                    populateShopItems(cat, gameInstance); 
+                  }
+                });
+              }
+            }
+            wrapper.appendChild(itemDiv);
+          });
+
+          // 如果项目数量为奇数，添加一个空的占位项目以保持对齐
+          if (items.length % 2 !== 0 && category !== 'music') { // 排除music页面
+            const spacerItem = document.createElement('div');
+            spacerItem.className = 'shop-item';
+            spacerItem.style.visibility = 'hidden';  // 不可见但占位
+            spacerItem.style.boxShadow = 'none';     // 去除阴影
+            spacerItem.style.border = 'none';        // 去除边框
+            wrapper.appendChild(spacerItem);
+          }
+        }
+        // ============== SHOP SYSTEM CODE END ==============
+
+        // 音频播放
+        let audio_player = [new Audio, new Audio];
+        let audio_index = 0,
+            AUDIO = !0;
+        const playaudio = e => {
+            AUDIO && (audio_index = (audio_index + 1) % audio_player.length, audio_player[audio_index].pause(), audio_player[audio_index].src = e[Math.floor(Math.random() * e.length)], audio_player[audio_index].play())
+        };
+
+        // 游戏项目
+        let ITEMS = [{
+            id: "flash_slothmore",
+            cost: 20,
+            initial_value: 0.2,
+            lvl: 0,
+            cost_func: e => 1.5 * e,
+            value_func: e => 1.2 * e,
+            getDescription: function() {
+                return {
+                    name: getItemName(this),
+                    description: getItemDescription(this)
+                };
+            }
+        }, {
+            id: "homer_simpson",
+            cost: 40,
+            initial_value: 0.5,
+            lvl: 0,
+            cost_func: e => 1.5 * e,
+            value_func: e => 1.2 * e,
+            getDescription: function() {
+                return {
+                    name: getItemName(this),
+                    description: getItemDescription(this)
+                };
+            }
+        }, {
+            id: "squidward_tentacles",
+            cost: 90,
+            initial_value: 1,
+            lvl: 0,
+            cost_func: e => 3 * e,
+            value_func: e => 1.5 * e,
+            getDescription: function() {
+                return {
+                    name: getItemName(this),
+                    description: getItemDescription(this)
+                };
+            }
+        }, {
+            id: "shovel",
+            cost: 150,
+            initial_value: 1.5,
+            lvl: 0,
+            cost_func: e => 3 * e,
+            value_func: e => 1.5 * e,
+            getDescription: function() {
+                return {
+                    name: getItemName(this),
+                    description: getItemDescription(this)
+                };
+            }
+        }, {
+            id: "mechanical_arm",
+            cost: 200,
+            multiplier: 2,
+            lvl: 0,
+            cost_func: e => 4 * e,
+            getDescription: function() {
+                return {
+                    name: getItemName(this),
+                    description: getItemDescription(this)
+                };
+            }
+        },{
+            id: "peashooter",
+            cost: 500,
+            initial_value: 3,
+            lvl: 0,
+            cost_func: e => 2.5 * e,
+            value_func: e => 1.2 * e,
+            getDescription: function() {
+                return {
+                    name: getItemName(this),
+                    description: getItemDescription(this)
+                };
+            }
+        }, {
+            id: "revolver",
+            cost: 900,
+            initial_value: 4,
+            lvl: 0,
+            cost_func: e => 2 * e,
+            value_func: e => 1.2 * e,
+            getDescription: function() {
+                return {
+                    name: getItemName(this),
+                    description: getItemDescription(this)
+                };
+            }
+        }, {
+            id: "super_mario",
+            cost: 2000,
+            initial_value: 6,
+            lvl: 0,
+            cost_func: e => 3 * e,
+            value_func: e => 1.4 * e,
+            getDescription: function() {
+                return {
+                    name: getItemName(this),
+                    description: getItemDescription(this)
+                };
+            }
+        }, {
+            id: "pikachu",
+            cost: 5000,
+            initial_value: 10,
+            lvl: 0,
+            cost_func: e => 3 * e,
+            value_func: e => 1.5 * e,
+            getDescription: function() {
+                return {
+                    name: getItemName(this),
+                    description: getItemDescription(this)
+                };
+            }
+        },{
+            id: "spacebar_enchantment",
+            cost: 6000,
+            multiplier: 3,
+            lvl: 0,
+            cost_func: e => 6 * e,
+            getDescription: function() {
+                return {
+                    name: getItemName(this),
+                    description: getItemDescription(this)
+                };
+            }
+        }, {
+            id: "grumpy_grandma",
+            cost: 12000,
+            initial_value: 15,
+            lvl: 0,
+            cost_func: e => 2.5 * e,
+            value_func: e => 1.2 * e,
+            getDescription: function() {
+                return {
+                    name: getItemName(this),
+                    description: getItemDescription(this)
+                };
+            }
+        },{
+            id: "gatling_pea",
+            cost: 30000,
+            initial_value: 20,
+            lvl: 0,
+            cost_func: e => 3 * e,
+            value_func: e => 1.5 * e,
+            getDescription: function() {
+                return {
+                    name: getItemName(this),
+                    description: getItemDescription(this)
+                };
+            }
+        }, {
+            id: "blastoise",
+            cost: 50000,
+            initial_value: 50,
+            lvl: 0,
+            cost_func: e => 2.5 * e,
+            value_func: e => 1.2 * e,
+            getDescription: function() {
+                return {
+                    name: getItemName(this),
+                    description: getItemDescription(this)
+                };
+            }
+        }, {
+            id: "woodpecker",
+            cost: 90000,
+            initial_value: 80,
+            lvl: 0,
+            cost_func: e => 2 * e,
+            value_func: e => 1 * e,
+            getDescription: function() {
+                return {
+                    name: getItemName(this),
+                    description: getItemDescription(this)
+                };
+            }
+        }, {
+            id: "gatling",
+            cost: 120000,
+            initial_value: 120,
+            lvl: 0,
+            cost_func: e => 3 * e,
+            value_func: e => 1.5 * e,
+            getDescription: function() {
+                return {
+                    name: getItemName(this),
+                    description: getItemDescription(this)
+                };
+            }
+        }, {
+            id: "poseidon",
+            cost: 200000,
+            initial_value: 200,
+            lvl: 0,
+            cost_func: e => 2 * e,
+            value_func: e => 1.2 * e,
+            getDescription: function() {
+                return {
+                    name: getItemName(this),
+                    description: getItemDescription(this)
+                };
+            }
+        }, {
+            id: "ultraman_tiga",
+            cost: 5000000,
+            initial_value: 500,
+            lvl: 0,
+            cost_func: e => 2 * e,
+            value_func: e => 1.2 * e,
+            getDescription: function() {
+                return {
+                    name: getItemName(this),
+                    description: getItemDescription(this)
+                };
+            }
+        }];
+
+        // 初始化项目值
+        ! function() {
+            for (let e in ITEMS) ITEMS[e].value = ITEMS[e].initial_value
+        }();
+
+        // 计算项目总价值
+        let total_item_value = e => {
+            let t = 0,
+                i = e.initial_value;
+            for (let a = 0; a < e.lvl; a++) t += i, i = e.value_func(i);
+            return t
+        };
+
+        // 级别定义
+        let LEVELS = [{
+            psvalue: 0,
+            rain: 0
+        }, {
+            psvalue: 10,
+            rain: 5
+        }, {
+            psvalue: 100,
+            rain: 10
+        }, {
+            psvalue: 500,
+            rain: 12
+        }, {
+            psvalue: 1e3,
+            rain: 15
+        }, {
+            psvalue: 5e3,
+            rain: 17
+        }, {
+            psvalue: 1e4,
+            rain: 18
+        }, {
+            psvalue: 5e4,
+            rain: 19
+        }, {
+            psvalue: 1e5,
+            rain: 20
+        }, {
+            psvalue: 3e5,
+            rain: 21
+        }, {
+            psvalue: 8e5,
+            rain: 22
+        }, {
+            psvalue: 1e6,
+            rain: 23
+        }];
+
+        // 音效定义
+        const SOUNDS = {
+            click: [
+                jsfxr([0, 0, .07086974935991196, .45065582613048494, .12451125371771453, .6610070860477287, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, .5]),
+                jsfxr([0, 0, .07086974935991196, .35, .12451125371771453, .7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, .5]),
+                jsfxr([0, 0, .1, .35, .12451125371771453, .65, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, .5])
+            ],
+            buy: [
+                "audio/sound/click/bubble_pop.mp3"
+            ]
+        };
+
+        // 定义原始 JSFXR 音效，用于恢复默认设置
+        const ORIGINAL_JSFXR_SOUNDS = {
+            click: [
+                jsfxr([0,0,.07086974935991196,.45065582613048494,.12451125371771453,.6610070860477287,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,.5]),
+                jsfxr([0,0,.07086974935991196,.35,.12451125371771453,.7,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,.5]),
+                jsfxr([0,0,.1,.35,.12451125371771453,.65,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,.5])
+            ]
+            // buy sounds can remain as they are in the main SOUNDS object
+        };
+
+        // 粒子系统类
+        class ParticleSystem {
+            constructor(t, e) {
+                this.lifetime = t;
+                this.func = e;
+                this.particles = [];
+                setInterval(this.update.bind(this), 16);
+            }
+
+            pushParticle(t, e) {
+                this.particles.push({
+                    life: this.lifetime,
+                    element: t,
+                    x: e.x,
+                    y: e.y,
+                    ix: e.x,
+                    iy: e.y,
+                    alpha: 0,
+                    rot: 0
+                });
+                t.style.opacity = "0";
+            }
+
+            update() {
+                let t = [];
+                for (let e in this.particles) {
+                    let i = this.particles[e];
+                    i.life -= .016;
+                    i.normalized_time = 1 - i.life / this.lifetime;
+                    this.func(i);
+                    i.element.style.transform = "translateX(" + i.x + "px) translateY(" + i.y + "px) rotateZ(" + i.rot + "deg)";
+                    i.element.style.opacity = "" + (1 - i.alpha);
+                    i.life <= 0 && t.push(e);
+                }
+                for (let e in t) {
+                    this.particles[t[e]].element.remove();
+                    this.particles.splice(t[e], 1);
+                }
+            }
+        }
+        
+        // 计数器类
+        class Counter {
+            constructor() {
+                this.v = 0;
+                this.va = 0;
+                this.multiplier = 1;
+                setInterval(this.update.bind(this), 10);
+            }
+
+            evaluateItems() {
+                this.va = 0;
+                this.multiplier = 1;
+                for (let t in ITEMS) {
+                    let i = ITEMS[t];
+                    void 0 != i.multiplier ? 
+                        this.multiplier *= i.lvl > 0 ? Math.pow(i.multiplier, i.lvl) : 1 : 
+                        this.va += total_item_value(i);
+                }
+            }
+
+            update() {
+                this.v += this.va / 100;
+            }
+
+            setValue(t) {
+                this.v = t;
+            }
+
+            spend(t) {
+                this.v -= t;
+            }
+
+            add(t) {
+                let i = t * this.multiplier;
+                return this.v += i, i;
+            }
+
+            addOne() {
+                return this.v += this.multiplier, this.multiplier;
+            }
+
+            getPerSecond() {
+                return this.va;
+            }
+        }
+
+        // 游戏主类
+        class Game {
+            constructor() {}
+
+            init() {
+                // 先加载语言文件
+                loadStrings().then(() => {
+                    this.currentLevel = 0;
+                    this.cc = gId("counter");
+                    this.cs = gId("per_second");
+                    this.counter = new Counter;
+                    this.sb = gId("sb");
+                    this.sb.addEventListener("mousedown", this.click.bind(this));
+                    document.addEventListener("keydown", this.keydown.bind(this));
+                    document.addEventListener("keyup", this.keyup.bind(this));
+                    document.setValue = this.setValue.bind(this);
+                    
+                    // 初始化商店相关属性
+                    this.ownedItems = { // Initialize before loading
+                        skins: ['default'],
+                        backgrounds: ['default'],
+                        sounds: ['default'],
+                        music: ['default']
+                    };
+                    this.currentSkin = 'default';
+                    this.currentBackground = 'default';
+                    this.currentClickSound = 'default'; 
+                    this.currentBgm = 'default';
+                    
+                    // 确保背景音乐初始状态为关闭
+                    this.MUSIC_ENABLED = false;
+                    
+                    // 初始化粒子效果
+                    this.click_particle = new ParticleSystem(1, e => {
+                        e.y = lerp(e.y, e.iy - 110, .05);
+                        e.x = e.ix + 10 * Math.sin(10 * (5 * e.ix + e.normalized_time));
+                        e.alpha = e.normalized_time;
+                    });
+                    
+                    this.rain_particle = new ParticleSystem(3, e => {
+                        e.y += 3;
+                        e.x = e.ix + 10 * Math.sin(10 * (5 * e.ix + e.normalized_time));
+                        e.rot = 10 * Math.sin(30 * e.normalized_time);
+                        e.alpha = e.normalized_time;
+                    });
+                    
+                    // 初始化项目网格
+                    this.initItems();
+                    
+                    // 初始化功能按钮
+                    this.initFunctionButtons();
+                    
+                    // 加载已拥有物品和设置
+                    this.loadOwnedItems(); // Load owned items first
+                    this.loadGame();       // loadGame calls loadSettings internally
+                                        // loadSettings will populate this.currentSkin, etc.
+                    
+                    // 应用加载的商店物品选择
+                    this.applyCurrentShopSelections();
+                    
+                    // 初始化商店JS (UI事件等)
+                    initShopJS(this);
+                    
+                    // 初始化游戏
+                    this.adjustSize();
+                    window.addEventListener("resize", this.adjustSize.bind(this));
+                    this.loadGame();
+                    this.updateItemDescriptions();
+                    this.counter.evaluateItems();
+                    this.checkCurrentLevel();
+                    this.update();
+                    setInterval(this.update.bind(this), 100);
+                    this.frameCounter = 0;
+                });
+            }
+
+            adjustSize() {
+                // 根据设备调整计数器大小
+                mobile() ? 
+                    this.cc.style["font-size"] = (8 - this.cc.innerText.length / 2) + "rem" : 
+                    this.cc.style["font-size"] = (10 - this.cc.innerText.length / 3) + "rem";
+                
+                // 调整计数器垂直居中
+                let e = (this.cc.clientHeight - this.cc.firstChild.clientHeight) / 2;
+                this.cc.firstChild.style.transform = "translateY(" + e + "px)";
+            }
+
+            update() {
+                // 更新计数器显示
+                this.cc.firstChild.innerHTML = nfmt2(this.counter.v);
+                
+                // 更新每秒点击数显示
+                this.cs.innerHTML = `${getText('game.per_second', 'per second:')} ${this.counter.va < 1e3 ? nfmt1(this.counter.va) : nfmt2(this.counter.va)}`;
+                
+                // 更新项目显示
+                this.updateItems();
+                
+                // 更新粒子效果
+                this.updateParticles();
+                
+                // 调整大小
+                this.adjustSize();
+                
+                // 定期自动保存
+                ++this.frameCounter % 30 == 0 && this.saveGame();
+            }
+
+            updateItems() {
+                // 确定最高等级项目
+                let maxLevel = 0;
+                for (let i in ITEMS) {
+                    let item = ITEMS[i];
+                    if (item.lvl > 0) {
+                        maxLevel = Math.max(maxLevel, parseInt(i) + 1);
+                    }
+                    
+                    // 检查是否已创建图标
+                    if (!item.dyn_element) {
+                        continue;
+                    }
+                    
+                    // 隐藏所有项目
+                    item.dyn_element.classList.add("hide");
+                    
+                    // 更新项目数量
+                    const countElement = item.dyn_element.querySelector('.item-count');
+                    if (countElement) {
+                        countElement.textContent = item.lvl;
+                        
+                        // 如果数量变化，添加突出动画
+                        if (item.lastLvl !== undefined && item.lastLvl !== item.lvl) {
+                            countElement.animate([
+                                { transform: 'scale(1.5)', backgroundColor: 'var(--main-color)' },
+                                { transform: 'scale(1)', backgroundColor: 'var(--highlight-color)' }
+                            ], {
+                                duration: 300,
+                                easing: 'ease-out'
+                            });
+                        }
+                        item.lastLvl = item.lvl;
+                    }
+                    
+                    // 更新购买状态
+                    const wasBuyable = item.dyn_element.classList.contains('buyable');
+                    const isBuyable = item.cost <= this.counter.v;
+                    
+                    if (wasBuyable !== isBuyable) {
+                        if (isBuyable) {
+                            // 变为可购买时添加动画效果
+                            item.dyn_element.animate([
+                                { opacity: 0.7, transform: 'scale(0.95)' },
+                                { opacity: 1, transform: 'scale(1)' }
+                            ], {
+                                duration: 300,
+                                easing: 'ease-out'
+                            });
+                        }
+                        item.dyn_element.classList.toggle('buyable', isBuyable);
+                    }
+                    
+                    // 更新价格
+                    const costElement = item.dyn_element.querySelector('.item-cost');
+                    if (costElement) {
+                        costElement.textContent = nfmt2(item.cost);
+                    }
+                }
+                
+                // 显示已解锁和即将解锁的项目
+                if (this.counter.v > 5 || this.counter.va > 0) {
+                    for (let i = 0; i < Math.min(ITEMS.length, maxLevel + 1); i++) {
+                        if (ITEMS[i].dyn_element) {
+                            ITEMS[i].dyn_element.classList.remove("hide");
+                        }
+                    }
+                }
+            }
+
+            updateItemDescriptions() {
+                for (let i in ITEMS) {
+                    let item = ITEMS[i];
+                    // 跳过未创建的元素
+                    if (!item.dyn_element) continue;
+                    
+                    const itemInfo = item.getDescription(item);
+                    
+                    const titleElement = item.dyn_element.querySelector('.item-title');
+                    if (titleElement) {
+                        titleElement.innerHTML = itemInfo.name;
+                    }
+                    
+                    const descElement = item.dyn_element.querySelector('.item-description');
+                    if (descElement) {
+                        // 格式化描述中的变量
+                        let description = itemInfo.description;
+                        
+                        // 替换 %v 为当前值，使用与主区域相同的精度格式化逻辑
+                        if (item.initial_value !== undefined) {
+                            let displayValue = item.initial_value;
+                            if (item.value !== undefined) {
+                                displayValue = item.value;
+                            }
+                            // 对于整数，使用nfmt；否则按大小使用nfmt1或nfmt2
+                            let formattedValue = Number.isInteger(displayValue) ? nfmt(displayValue) : 
+                                                (displayValue < 1e3 ? nfmt1(displayValue) : nfmt2(displayValue));
+                            description = description.replace(/%v/g, formattedValue);
+                        }
+                        
+                        descElement.innerHTML = description;
+                    }
+                }
+            }
+
+            updateCounter() {
+                this.cc.firstChild.innerText = nfmt2(this.counter.v);
+                this.cs.innerHTML = `${getText('game.per_second', 'per second:')} ${this.counter.va < 1e3 ? nfmt1(this.counter.va) : nfmt2(this.counter.va)}`;
+            }
+
+            updateParticles() {
+                // 更新点击粒子
+                this.click_particle && this.click_particle.update();
+                
+                // 更新雨滴粒子
+                this.rain_particle && this.rain_particle.update();
+            }
+
+            buy(item) {
+                // 如果点数不足则不能购买
+                if (this.counter.v < item.cost) return false;
+                
+                // 播放购买音效
+                playaudio(SOUNDS.buy);
+                
+                // 保存购买前的等级
+                const prevLevel = item.lvl;
+                
+                // 执行购买
+                this.counter.spend(Math.floor(item.cost));
+                item.lvl++;
+                item.cost = item.cost_func(item.cost);
+                
+                // 更新项目价值
+                if (item.initial_value !== undefined) {
+                    item.value = item.value_func(item.value === undefined ? item.initial_value : item.value);
+                }
+                
+                // 更新游戏状态
+                this.counter.evaluateItems();
+                this.updateItemDescriptions();
+                this.checkCurrentLevel();
+                
+                // 添加购买成功的视觉反馈
+                const iconElement = item.dyn_element;
+                if (iconElement) {
+                    // 闪光效果
+                    iconElement.animate([
+                        { boxShadow: '0 0 20px var(--highlight-color)', transform: 'scale(1.1)' },
+                        { boxShadow: '0 4px 8px rgba(0,0,0,0.1)', transform: 'scale(1)' }
+                    ], {
+                        duration: 400,
+                        easing: 'ease-out'
+                    });
+                    
+                    // 如果是第一次购买，添加特殊效果
+                    if (prevLevel === 0) {
+                        iconElement.animate([
+                            { transform: 'rotate(-5deg) scale(1.2)' },
+                            { transform: 'rotate(5deg) scale(1.2)' },
+                            { transform: 'rotate(0) scale(1)' }
+                        ], {
+                            duration: 600,
+                            easing: 'ease-out'
+                        });
+                    }
+                }
+                
+                // 更新UI
+                this.update();
+                
+                // 震动效果（可选）
+                if (typeof navigator.vibrate === 'function') {
+                    navigator.vibrate(50);
+                }
+                
+                return true;
+            }
+
+            checkCurrentLevel() {
+                // 检查游戏当前级别
+                for (let e in LEVELS) {
+                    let t = LEVELS[e];
+                    this.counter.va > t.psvalue && (this.currentLevel = e);
+                }
+            }
+
+            setValue(e) {
+                this.counter.setValue(e);
+                this.update();
+            }
+
+            click(e) {
+                // 添加点数并更新计数器
+                let t = this.counter.addOne();
+                this.updateCounter();
+                playaudio(SOUNDS.click);
+                
+                // 根据点击位置创建粒子效果
+                if (void 0 == e) {
+                    let e = this.sb.getBoundingClientRect(),
+                        i = 50 * Math.random() - 25;
+                    this.addPointParticle(e.right - e.width / 2 + i, e.top, t);
+                } else {
+                    this.addPointParticle(e.clientX, e.clientY, t);
+                }
+            }
+
+            keydown(e) {
+                // 按下空格键时触发点击
+                if ("Space" == e.code && this.canclick) {
+                    this.click();
+                    sb.classList.add("sb_active");
+                    this.canclick = !1;
+                    
+                    // 阻止事件冒泡和默认行为，避免页面滚动
+                    e.preventDefault();
+                    e.stopPropagation();
+                }
+            }
+
+            keyup(e) {
+                // 松开空格键时重置状态
+                if ("Space" == e.code) {
+                    this.sb.classList.remove("sb_active");
+                    this.canclick = !0;
+                }
+            }
+
+            addPointParticle(e, t, i) {
+                // 创建分数粒子
+                let s = document.createElement("div");
+                s.textContent = "+" + i;
+                s.classList.add("particle");
+                s.classList.add("score");
+                
+                // 添加随机偏移
+                let a = 30 * Math.random() - 30,
+                    n = 30 * Math.random() - 20;
+                
+                // 添加粒子并插入到DOM中
+                this.click_particle.pushParticle(s, {
+                    x: e + a,
+                    y: t + n
+                });
+                document.body.insertBefore(s, document.body.firstChild);
+            }
+
+            shake(e = 20, t) {
+                // 默认使用game元素
+                void 0 == t && (t = gId("game"));
+                
+                // 使用协程生成摇晃效果
+                co(function*() {
+                    for (let i = 0; i < e; i++) {
+                        let e = 30 * Math.random() - 15,
+                            i = 30 * Math.random() - 15,
+                            s = 6 * Math.random() - 3;
+                        t.style.transform = "translateX(" + e + "px) translateY(" + i + "px) rotateZ(" + s + "deg)";
+                        yield .01;
+                    }
+                    t.style.transform = "translateX(0px) translateY(0px) rotateZ(0deg)";
+                });
+            }
+
+            resetGameSure() {
+                // 确认重置游戏(使用多语言)
+                if (window.confirm(getText('game.reset_confirmation', 'Are you sure you want to reset all the game data?'))) {
+                    this.resetGame();
+                }
+            }
+
+            resetGame() {
+                // 重置游戏数据
+                this.reloading = true;
+                window.localStorage.removeItem("spacebar_clicker_game");
+                
+                // 重置所有项目数据
+                for (let i in ITEMS) {
+                    ITEMS[i].lvl = 0;
+                    ITEMS[i].cost = ITEMS[i].base_cost;
+                    ITEMS[i].value = ITEMS[i].base_value;
+                }
+                
+                // 重置计数器
+                this.counter.v = 0;
+                this.counter.va = 0;
+                this.counter.multiplier = 1;
+                
+                // 重新渲染界面
+                this.update();
+                this.updateItemDescriptions();
+                
+                // 保存新的状态
+                this.saveGame();
+                
+                // 完成重置
+                this.reloading = false;
+            }
+
+            loadGame() {
+                // 从localStorage加载游戏数据
+                let e = window.localStorage.getItem("spacebar_clicker_game");
+                if (void 0 == e || null == e) return;
+                
+                let t = JSON.parse(e);
+                if (!t.empty) {
+                    // 加载点数和项目数据
+                    this.counter.v = t.v;
+                    for (let e in ITEMS) {
+                        if (e >= t.items.length) break;
+                        ITEMS[e].cost = t.items[e].cost;
+                        ITEMS[e].lvl = t.items[e].lvl;
+                        ITEMS[e].value = t.items[e].value;
+                    }
+                    
+                    // 加载主题设置
+                    if (t.theme) {
+                        setTimeout(() => {
+                            const themeBtn = document.querySelector(`.theme-btn[data-theme="${t.theme}"]`);
+                            if (themeBtn) themeBtn.click();
+                        }, 200);
+                    }
+                    
+                    // 加载其他设置
+                    this.loadSettings();
+                    
+                    this.reloading = !1;
+                }
+            }
+
+            saveGame() {
+                // 保存游戏数据到localStorage
+                let e = [];
+                for (let t in ITEMS) {
+                    e[t] = {
+                        cost: ITEMS[t].cost,
+                        lvl: ITEMS[t].lvl,
+                        value: ITEMS[t].value
+                    };
+                }
+                
+                let t = {
+                    empty: !1,
+                    v: this.counter.v,
+                    items: e,
+                    theme: this.spacebarTheme || 'default'
+                };
+                
+                // 只有非重载状态才保存
+                this.reloading || window.localStorage.setItem("spacebar_clicker_game", JSON.stringify(t));
+            }
+
+            setSpacebarTheme(theme) {
+                this.currentSkin = theme; // Keep this.currentSkin as the source of truth
+                const sb = document.getElementById('sb');
+
+                // Remove all existing skin classes
+                sb.classList.remove('skin-default', 'skin-neon', 'skin-retro', 'skin-cyber');
+                // Remove older theme classes just in case
+                sb.classList.remove('sb-theme-default', 'sb-theme-neon', 'sb-theme-retro', 'sb-theme-cyber');
+
+                // Add the new skin class
+                // The base .sb1 class provides most common styles
+                if (theme) {
+                    sb.classList.add('skin-' + theme);
+                } else {
+                    sb.classList.add('skin-default'); // Fallback to default if theme is undefined
+                }
+                // No direct style manipulations here anymore, CSS classes handle it.
+            }
+
+            // 切换音效
+            toggleSound() {
+                AUDIO = !AUDIO;
+                this.updateSoundButton();
+                // 保存设置
+                this.saveSettings();
+            }
+
+            // 更新音效按钮状态
+            updateSoundButton() {
+                const soundBtn = gId('sound-btn');
+                if (soundBtn) {
+                    soundBtn.innerHTML = AUDIO ? 
+                        `<svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>` : 
+                        `<svg viewBox="0 0 24 24"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/></svg>`;
+                }
+            }
+
+            // 切换背景音乐
+            toggleMusic() {
+                this.MUSIC_ENABLED = !this.MUSIC_ENABLED;
+                
+                if (this.MUSIC_ENABLED) {
+                    this.playBackgroundMusic(); // Will use currentBgm
+                } else {
+                    this.stopBackgroundMusic();
+                }
+                
+                this.updateMusicButton();
+                // 保存设置
+                this.saveSettings();
+            }
+
+            // 更新音乐按钮状态
+            updateMusicButton() {
+                const musicBtn = gId('music-btn');
+                if (musicBtn) {
+                    musicBtn.innerHTML = this.MUSIC_ENABLED ? 
+                        `<svg viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>` : 
+                        `<svg viewBox="0 0 24 24"><path d="M4.27 3L3 4.27l9 9v.28c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4v-1.73L19.73 21 21 19.73 4.27 3zM14 7h4V3h-6v5.18l2 2z"/></svg>`;
+                }
+            }
+
+            // 切换商城显示
+            toggleShop() {
+                const shopElement = gId('shop');
+                if (!shopElement) {
+                    console.error("Shop element not found for toggleShop");
+                    return;
+                }
+                const isHidden = shopElement.classList.contains('hide');
+                shopElement.classList.toggle('hide');
+
+                if (isHidden) { // Shop is being opened
+                    let activeTabElement = qSel('.shop-tab.active');
+                    let categoryToDisplay = 'sounds'; 
+                    if (activeTabElement) {
+                        categoryToDisplay = activeTabElement.dataset.tab;
+                    } else {
+                        const soundsTab = gId('shop-tab-sounds');
+                        if (soundsTab) {
+                             qSelA('.shop-tab').forEach(t => t.classList.remove('active'));
+                             soundsTab.classList.add('active');
+                        }
+                    }
+                    populateShopItems(categoryToDisplay, this);
+                }
+            }
+
+            // 播放背景音乐
+            playBackgroundMusic() {
+                if (!this.backgroundMusic) {
+                    this.backgroundMusic = new Audio();
+                    this.backgroundMusic.loop = true;
+                    this.backgroundMusic.volume = 0.5;
+                }
+                
+                const bgmToPlay = this.currentBgm || 'default';
+                
+                // 从SHOP_ITEMS中获取music_file
+                const musicItem = SHOP_ITEMS.music.find(item => item.id === bgmToPlay);
+                this.backgroundMusic.src = `audio/music/${musicItem.music_file}`;
+
+                if (this.MUSIC_ENABLED) {
+                    try {
+                        const playPromise = this.backgroundMusic.play();
+                        if (playPromise !== undefined) {
+                            playPromise.catch(error => {
+                                console.error('Failed to play background music:', error);
+                            });
+                        }
+                    } catch (e) {
+                        console.error('Failed to play background music:', e);
+                    }
+                }
+            }
+
+            // 停止背景音乐
+            stopBackgroundMusic() {
+                if (this.backgroundMusic) {
+                    this.backgroundMusic.pause();
+                }
+            }
+
+            // 保存设置
+            saveSettings() {
+                const settings = {
+                    audio: AUDIO,
+                    music: this.MUSIC_ENABLED,
+                    currentSkin: this.currentSkin || 'default',
+                    currentBackground: this.currentBackground || 'default',
+                    currentClickSound: this.currentClickSound || 'default',
+                    currentBgm: this.currentBgm || 'default'
+                };
+                localStorage.setItem('spacebar_clicker_settings', JSON.stringify(settings));
+            }
+
+            // 加载设置
+            loadSettings() {
+                const settingsStr = localStorage.getItem('spacebar_clicker_settings');
+                if (settingsStr) {
+                    try {
+                        const settings = JSON.parse(settingsStr);
+                        AUDIO = settings.audio !== undefined ? settings.audio : true;
+                        this.MUSIC_ENABLED = false;
+                        this.currentSkin = settings.currentSkin || 'default';
+                        this.currentBackground = settings.currentBackground || 'default';
+                        this.currentClickSound = settings.currentClickSound || 'default';
+                        this.currentBgm = settings.currentBgm || 'default';
+                        this.updateSoundButton();
+                        this.updateMusicButton(); // 更新音乐按钮状态为关闭
+                        this.stopBackgroundMusic(); // 确保音乐停止播放
+                    } catch (e) {
+                        console.error('Failed to parse settings:', e);
+                        AUDIO = true;
+                        this.MUSIC_ENABLED = false;
+                        this.currentSkin = 'default';
+                        this.currentBackground = 'default';
+                        this.currentClickSound = 'default';
+                        this.currentBgm = 'default';
+                    }
+                } else {
+                    AUDIO = true;
+                    this.MUSIC_ENABLED = false;
+                }
+                this.updateSoundButton();
+                this.updateMusicButton();
+            }
+
+            // 新增：应用皮肤、背景等的方法
+            applySkin(skinId) {
+                this.currentSkin = skinId || 'default';
+                this.setSpacebarTheme(this.currentSkin);
+            }
+
+            applyBackground(backgroundId) {
+                this.currentBackground = backgroundId || 'default';
+                if (this.currentBackground === 'default') {
+                    document.body.style.backgroundImage = 'url("data:image/svg+xml,%3Csvg width=\'12\' height=\'16\' viewBox=\'0 0 12 16\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M4 .99C4 .445 4.444 0 5 0c.552 0 1 .45 1 .99v4.02C6 5.555 5.556 6 5 6c-.552 0-1-.45-1-.99V.99zm6 8c0-.546.444-.99 1-.99.552 0 1 .45 1 .99v4.02c0 .546-.444-.99-1 .99-.552 0-1-.45-1-.99V8.99z\' fill=\'%233949ab\' fill-opacity=\'0.06\' fill-rule=\'evenodd\'/%3E%3C/svg%3E")';
+                    document.body.style.backgroundSize = ''; 
+                    document.body.style.backgroundRepeat = '';
+                    document.body.style.backgroundPosition = '';
+                } else {
+                    document.body.style.backgroundImage = `url('images/backgrounds/${this.currentBackground}.webp')`;
+                    document.body.style.backgroundSize = 'cover';
+                    document.body.style.backgroundRepeat = 'no-repeat';
+                    document.body.style.backgroundPosition = 'center center';
+                }
+            }
+
+            applyClickSound(soundId) {
+                this.currentClickSound = soundId || 'default';
+                // 从SHOP_ITEMS中获取sound_file
+                const soundItem = SHOP_ITEMS.sounds.find(item => item.id === this.currentClickSound);
+                SOUNDS.click = [`audio/sound/button/${soundItem.sound_file}`];
+            }
+
+            applyBgm(bgmId) {
+                this.currentBgm = bgmId || 'default';
+                if (!this.backgroundMusic) {
+                    this.backgroundMusic = new Audio();
+                    this.backgroundMusic.loop = true;
+                    this.backgroundMusic.volume = 1;
+                }
+                
+                // 从SHOP_ITEMS中获取music_file
+                const musicItem = SHOP_ITEMS.music.find(item => item.id === this.currentBgm);
+                if (musicItem && musicItem.music_file) {
+                    this.backgroundMusic.src = `audio/music/${musicItem.music_file}`;
+                } else {
+                    // 兼容旧版本，使用ID作为文件名
+                    this.backgroundMusic.src = `audio/music/${this.currentBgm}.mp3`;
+                }
+                
+                // 检查是否为商城调用并自动打开音乐 (通过检查callerId参数)
+                const isShopCall = (arguments.length > 1 && arguments[1] === 'shop');
+                if (isShopCall && !this.MUSIC_ENABLED) {
+                    this.MUSIC_ENABLED = true;
+                    this.updateMusicButton();
+                }
+                
+                if (this.MUSIC_ENABLED) {
+                    try {
+                        const playPromise = this.backgroundMusic.play();
+                        if (playPromise !== undefined) {
+                            playPromise.catch(error => {
+                                console.error('Failed to play background music:', error);
+                            });
+                        }
+                    } catch (e) {
+                        console.error('Failed to play background music:', e);
+                    }
+                }
+            }
+
+            applyCurrentShopSelections() {
+                this.applyClickSound(this.currentClickSound);
+                this.applyBgm(this.currentBgm);
+                this.applySkin(this.currentSkin);
+                this.applyBackground(this.currentBackground);
+            }
+            
+            saveOwnedItems() {
+                localStorage.setItem('spacebar_clicker_owned_items', JSON.stringify(this.ownedItems));
+            }
+
+            loadOwnedItems() {
+                const ownedItemsStr = localStorage.getItem('spacebar_clicker_owned_items');
+                if (ownedItemsStr) {
+                    try {
+                        const loadedItems = JSON.parse(ownedItemsStr);
+                        this.ownedItems = {
+                            skins: loadedItems.skins || ['default'],
+                            backgrounds: loadedItems.backgrounds || ['default'],
+                            sounds: loadedItems.sounds || ['default'],
+                            music: loadedItems.music || ['default']
+                        };
+                        ['skins', 'backgrounds', 'sounds', 'music'].forEach(category => {
+                            if (!this.ownedItems[category].includes('default')) {
+                                this.ownedItems[category].push('default');
+                            }
+                        });
+                    } catch(e) {
+                        console.error("Failed to parse owned items from localStorage", e);
+                    }
+                }
+            }
+            
+            saveGame() {
+                let itemsData = [];
+                for (let t in ITEMS) {
+                    itemsData[t] = {
+                        cost: ITEMS[t].cost,
+                        lvl: ITEMS[t].lvl,
+                        value: ITEMS[t].value
+                    };
+                }
+                let gameData = {
+                    empty: !1,
+                    v: this.counter.v,
+                    items: itemsData
+                };
+                if (!this.reloading) {
+                    window.localStorage.setItem("spacebar_clicker_game", JSON.stringify(gameData));
+                    this.saveSettings();
+                    this.saveOwnedItems();
+                }
+            }
+
+            // 初始化项目网格
+            initItems() {
+                this.items = [];
+                this.item_container = gId("items-grid");
+                this.item_container.innerHTML = ''; // 清空容器
+                
+                // 为每个项目创建图标
+                for (let i in ITEMS) {
+                    let item = ITEMS[i];
+                    // 设置基础值，用于重置
+                    if (!item.base_cost) {
+                        item.base_cost = item.cost;
+                    }
+                    if (!item.base_value && item.initial_value) {
+                        item.base_value = item.initial_value;
+                    }
+                    
+                    let itemElement = createItemIcon(item);
+                    this.item_container.appendChild(itemElement);
+                    item.dyn_element = itemElement;
+                }
+            }
+
+            // 初始化功能按钮
+            initFunctionButtons() {
+                // 重置按钮
+                const resetBtn = gId('reset-btn');
+                resetBtn.addEventListener('click', this.resetGameSure.bind(this));
+                
+                // 音效开关按钮
+                const soundBtn = gId('sound-btn');
+                soundBtn.addEventListener('click', this.toggleSound.bind(this));
+                
+                // 音乐开关按钮
+                const musicBtn = gId('music-btn');
+                musicBtn.addEventListener('click', this.toggleMusic.bind(this));
+                
+                // 商城按钮
+                const shopBtn = gId('shop-btn');
+                shopBtn.addEventListener('click', this.toggleShop.bind(this));
+                
+                // 确保初始状态按钮显示正确
+                this.updateSoundButton();
+                this.updateMusicButton();
+            }
+        }
+
+        // 创建游戏项目图标
+        function createItemIcon(item) {
+            const iconElement = document.createElement('div');
+            iconElement.className = 'item-icon';
+            // 添加项目ID作为类名，用于自定义样式
+            if (item.id) {
+                iconElement.classList.add(item.id);
+            }
+            iconElement.classList.toggle('buyable', item.cost <= game.counter.v);
+            iconElement.id = `item-${item.id}`;
+            
+            // 添加背景图片（如果有的话）
+            // 注意：如果没有图片资源，可以使用一个简单的占位符，或者文字表示
+            if (item.id) {
+                // 尝试设置背景图，如果文件不存在会静默失败
+                iconElement.style.backgroundImage = `url('images/icons/${item.id}.webp')`;
+                
+                // 如果没有图片，使用文字表示
+                const fallbackText = document.createElement('div');
+                fallbackText.textContent = item.id.charAt(0).toUpperCase();
+                fallbackText.className = 'item-fallback-text';
+                
+                // 设置图片加载错误处理
+                const img = new Image();
+                img.onload = () => {
+                    // 图片加载成功，移除占位文字
+                    if (fallbackText.parentNode === iconElement) {
+                        iconElement.removeChild(fallbackText);
+                    }
+                };
+                img.onerror = () => {
+                    // 图片加载失败，显示占位文字
+                    if (!iconElement.contains(fallbackText)) {
+                        iconElement.appendChild(fallbackText);
+                    }
+                };
+                img.src = `images/icons/${item.id}.webp`;
+                
+                // 先添加占位文字，等图片加载完成再决定是否移除
+                iconElement.appendChild(fallbackText);
+            }
+            
+            // 添加数量标签
+            const countElement = document.createElement('div');
+            countElement.className = 'item-count';
+            countElement.textContent = item.lvl;
+            iconElement.appendChild(countElement);
+            
+            // 创建提示框
+            const tooltip = document.createElement('div');
+            tooltip.className = 'item-tooltip';
+            
+            // 获取项目描述
+            const itemInfo = item.getDescription(item);
+            
+            // 添加提示框内容，包括名称、描述和价格
+            tooltip.innerHTML = `
+                <h3 class="item-title">${itemInfo.name}</h3>
+                <p class="item-description">${itemInfo.description}</p>
+                <div class="item-price">
+                    <span class="spacebar"></span>
+                    <span class="item-cost">${nfmt2(item.cost)}</span>
+                </div>
+            `;
+            
+            iconElement.appendChild(tooltip);
+            
+            // 添加点击事件，带有视觉反馈
+            iconElement.addEventListener('click', function() {
+                // 如果可以购买，添加点击动画效果
+                if (item.cost <= game.counter.v) {
+                    // 添加波纹效果
+                    const rippleSize = Math.max(iconElement.clientWidth, iconElement.clientHeight);
+                    const ripple = document.createElement('span');
+                    ripple.style.width = rippleSize + 'px';
+                    ripple.style.height = rippleSize + 'px';
+                    ripple.className = 'item-ripple';
+                    
+                    // 设置波纹位置
+                    iconElement.appendChild(ripple);
+                    
+                    // 添加购买动画
+                    iconElement.classList.add('item-purchased');
+                    
+                    // 动画结束后移除类和元素
+                    setTimeout(() => {
+                        iconElement.classList.remove('item-purchased');
+                        ripple.remove();
+                    }, 600);
+                    
+                    // 执行购买
+                    game.buy(item);
+                } else {
+                    // 不可购买时的反馈（轻微抖动）
+                    iconElement.animate([
+                        { transform: 'translateX(-2px)' },
+                        { transform: 'translateX(2px)' },
+                        { transform: 'translateX(-2px)' },
+                        { transform: 'translateX(0)' }
+                    ], {
+                        duration: 200,
+                        iterations: 1
+                    });
+                }
+            });
+
+            // 添加悬停事件以显示/隐藏和定位提示框
+            iconElement.addEventListener('mouseenter', function() {
+                const tooltipElement = iconElement.querySelector('.item-tooltip');
+                
+                // 更新 tooltip 内容以确保显示的是最新信息
+                // (虽然 updateItemDescriptions 也会更新, 但悬停时即时更新更佳)
+                const currentItemInfo = item.getDescription(item);
+                const titleEl = tooltipElement.querySelector('.item-title');
+                if (titleEl) titleEl.innerHTML = currentItemInfo.name;
+                
+                const descEl = tooltipElement.querySelector('.item-description');
+                if (descEl) {
+                    let description = currentItemInfo.description;
+                    if (item.initial_value !== undefined) {
+                        let displayValue = item.initial_value;
+                        if (item.value !== undefined) {
+                            displayValue = item.value;
+                        }
+                        // 对于整数，使用nfmt；否则按大小使用nfmt1或nfmt2
+                        let formattedValue = Number.isInteger(displayValue) ? nfmt(displayValue) : 
+                                            (displayValue < 1e3 ? nfmt1(displayValue) : nfmt2(displayValue));
+                        description = description.replace(/%v/g, formattedValue);
+                    }
+                    descEl.innerHTML = description;
+                }
+                const costEl = tooltipElement.querySelector('.item-cost');
+                if (costEl) costEl.textContent = nfmt2(item.cost);
+
+
+                tooltipElement.style.visibility = 'visible';
+                tooltipElement.style.opacity = '1';
+                
+                // 强制重绘以获取正确的尺寸
+                tooltipElement.offsetHeight;
+
+                const iconRect = iconElement.getBoundingClientRect();
+                const tooltipRect = tooltipElement.getBoundingClientRect();
+
+                let deltaX = 0;
+                let finalTranslateY = 0;
+
+                const viewportWidth = document.documentElement.clientWidth;
+                const viewportHeight = document.documentElement.clientHeight;
+
+                // --- 水平位置调整 ---
+                const projectedLeft = iconRect.left + (iconRect.width / 2) - (tooltipRect.width / 2);
+                const projectedRight = projectedLeft + tooltipRect.width;
+
+                if (projectedRight > viewportWidth) {
+                    deltaX = viewportWidth - projectedRight - 10; // 10px 边距
+                } else if (projectedLeft < 0) {
+                    deltaX = -projectedLeft + 10; // 10px 边距
+                }
+
+                // --- 垂直位置调整 ---
+                const tooltipAbsoluteTopViaCSS = iconRect.top + 90; 
+                const tooltipAbsoluteBottom = tooltipAbsoluteTopViaCSS + tooltipRect.height;
+
+                if (tooltipAbsoluteBottom > viewportHeight) {
+                    finalTranslateY = viewportHeight - tooltipAbsoluteBottom - 10; // 负值，向上移动
+                }
+                
+                if ((tooltipAbsoluteTopViaCSS + finalTranslateY) < 0) {
+                    finalTranslateY = -tooltipAbsoluteTopViaCSS + 10; // 调整以适应顶部
+                }
+                
+                tooltipElement.style.transform = `translateX(calc(-50% + ${deltaX}px)) translateY(${finalTranslateY}px)`;
+            });
+
+            iconElement.addEventListener('mouseleave', function() {
+                const tooltipElement = iconElement.querySelector('.item-tooltip');
+                tooltipElement.style.opacity = '0';
+                tooltipElement.style.visibility = 'hidden';
+                // 重置到初始隐藏状态的transform (对应CSS中的定义)
+                tooltipElement.style.transform = 'translateX(-50%) translateY(10px)'; 
+            });
+            
+            return iconElement;
+        }
+
+        // 初始化游戏
+        let game = new Game;
+        game.init();
+
+        // 更新项目描述
+        Game.prototype.updateItemDescriptions = function() {
+            for (let i in ITEMS) {
+                let item = ITEMS[i];
+                // 跳过未创建的元素
+                if (!item.dyn_element) continue;
+                
+                const itemInfo = item.getDescription(item);
+                
+                const titleElement = item.dyn_element.querySelector('.item-title');
+                if (titleElement) {
+                    titleElement.innerHTML = itemInfo.name;
+                }
+                
+                const descElement = item.dyn_element.querySelector('.item-description');
+                if (descElement) {
+                    // 格式化描述中的变量
+                    let description = itemInfo.description;
+                    
+                    // 替换 %v 为当前值，使用与主区域相同的精度格式化逻辑
+                    if (item.initial_value !== undefined) {
+                        let displayValue = item.initial_value;
+                        if (item.value !== undefined) {
+                            displayValue = item.value;
+                        }
+                        // 对于整数，使用nfmt；否则按大小使用nfmt1或nfmt2
+                        let formattedValue = Number.isInteger(displayValue) ? nfmt(displayValue) : 
+                                            (displayValue < 1e3 ? nfmt1(displayValue) : nfmt2(displayValue));
+                        description = description.replace(/%v/g, formattedValue);
+                    }
+                    
+                    descElement.innerHTML = description;
+                }
+            }
+        };
+
+        // 获取项目名称
+        function getItemName(item) {
+            try {
+                return getText(`items.${item.id}.name`, item.id);
+            } catch (e) {
+                return item.id;
+            }
+        }
+
+        // 获取项目描述
+        function getItemDescription(item) {
+            try {
+                return getText(`items.${item.id}.description`, '');
+            } catch (e) {
+                return '';
+            }
+        }
+
+        // 获取项目背景故事
+        function getItemLore(item) {
+            try {
+                return getText(`items.${item.id}.lore`, '');
+            } catch (e) {
+                return '';
+            }
+        }
+    </script>
+</body>
+</html>

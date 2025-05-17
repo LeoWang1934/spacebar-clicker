@@ -1,0 +1,265 @@
+{
+  "game": {
+    "title": "SPACEBAR CLICKER",
+    "per_second": "klik otomatis per detik:",
+    "spacebar_text": "TOMBOL SPASI",
+    "reset_confirmation": "Apakah Anda yakin ingin mengatur ulang semua data permainan?",
+    "reset_button": "atur ulang permainan"
+  },
+  "items": {
+    "flash_slothmore": {
+      "name": "Flash Slothmore",
+      "description": "Kukang 'tercepat' di dunia. Menekan tombol spasi <b>%v</b> kali/detik. Dia berusaha sebaik mungkin, oke?"
+    },
+    "squidward_tentacles": {
+      "name": "Squidward Tentacles",
+      "description": "Cumi-cumi pemarah. Membenci pekerjaannya. Memukul tombol spasi <b>%v</b> kali/detik dengan wajahnya... mungkin."
+    },
+    "grumpy_grandma": {
+      "name": "Nenek Pemarah",
+      "description": "Dia tidak marah padamu, hanya pada tombol spasi. Memukulnya <b>%v</b> kali/detik dengan tongkatnya."
+    },
+    "woodpecker": {
+      "name": "Burung Pelatuk",
+      "description": "Mengira tombol spasi Anda adalah pohon yang lezat. Mematuknya <b>%v</b> kali/detik. Nyam nyam nyam."
+    },
+    "spacebar_enchantment": {
+      "name": "Sihir Tombol Spasi",
+      "description": "Terlalu malas untuk mengklik? Sihir ini membuat klik Anda <b>tiga kali</b> lebih kuat! Bekerja lebih cerdas."
+    },
+    "gatling": {
+      "name": "Senapan Gatling",
+      "description": "Berlebihan? Tidak. Senapan Gatling ini melepaskan <b>%v</b> klik/detik pada tombol spasi yang malang itu. BRRRRT!"
+    },
+    "pikachu": {
+      "name": "Pikachu",
+      "description": "Pika-CHUU! Tikus listrik ini menyengat tombol spasi Anda dengan <b>%v</b> klik/detik. Mengejutkan efektif!"
+    },
+    "blastoise": {
+      "name": "Blastoise",
+      "description": "Meriam hidro Blastoise membasahi tombol spasi dengan <b>%v</b> klik/detik. Berselancar naik, klik turun!"
+    },
+    "peashooter": {
+      "name": "Penembak Kacang",
+      "description": "Makhluk kecil ini menembakkan kacang ke tombol spasi Anda sebanyak <b>%v</b> klik/detik. Hijau dan jahat!"
+    },
+    "gatling_pea": {
+      "name": "Kacang Gatling",
+      "description": "Sepupu marah dari Penembak Kacang. Melepaskan badai kacang sebanyak <b>%v</b> klik/detik. Ratta-tat-KACANG!"
+    },
+    "super_mario": {
+      "name": "Super Mario",
+      "description": "It's-a me, Mario! Menginjak tombol spasi Anda sebanyak <b>%v</b> klik/detik. Wahoo! Klik level berikutnya!"
+    },
+    "ultraman_tiga": {
+      "name": "Ultraman Tiga",
+      "description": "Ultraman Tiga membela klik Anda! Sinar Zepellion menghasilkan <b>%v</b> pukulan tombol spasi/detik. Demi keadilan!"
+    },
+    "revolver": {
+      "name": "Revolver",
+      "description": "Kota ini tidak cukup besar untuk tombol spasi yang belum diklik. Revolver memukul sebanyak <b>%v</b> klik/detik, partner."
+    },
+    "shovel": {
+      "name": "Sekop?",
+      "description": "Sekop? Benarkah? Yah, sekop ini menggali <b>%v</b> klik/detik. Jangan mempertanyakan metodenya, cukup klik saja!"
+    },
+    "homer_simpson": {
+      "name": "Homer Simpson",
+      "description": "D'oh! Pencarian donat Homer 'tidak sengaja' menghasilkan <b>%v</b> klik/detik pada tombol spasi. Mmm, klik..."
+    },
+    "poseidon": {
+      "name": "Poseidon",
+      "description": "Memanggil gelombang pasang sebesar <b>%v</b> klik/detik. Tombol spasi Anda kini secara resmi menjadi pantai!"
+    },
+    "mechanical_arm": {
+      "name": "Lengan Mekanik",
+      "description": "<b>Menggandakan</b> kecepatan klik Anda sendiri. Peringatan: mungkin mengembangkan pikiran sendiri."
+    }
+  },
+  "ui": {
+    "footer": "sebuah permainan oleh",
+    "spacebar_theme_title": "Tema Tombol Spasi",
+    "sound_button": "Aktifkan/Nonaktifkan Suara",
+    "music_button": "Aktifkan/Nonaktifkan Musik",
+    "shop_button": "Toko",
+    "shop_coming_soon": "Fitur toko akan segera hadir!",
+    "spacebar_theme": {
+      "default": "Default",
+      "neon": "Neon",
+      "retro": "Retro",
+      "cyber": "Cyber"
+    },
+    "shop": {
+      "title": "Toko",
+      "tabs": {
+        "skins": "Skin",
+        "backgrounds": "Latar Belakang",
+        "sounds": "Suara",
+        "music": "Musik"
+      },
+      "buttons": {
+        "buy": "Beli",
+        "use": "Gunakan",
+        "using": "Sedang Digunakan"
+      }
+    }
+  },
+  "shop": {
+    "skins": {
+      "default": {
+        "name": "Skin Default",
+        "description": "Tampilan tombol spasi yang klasik dan andal. Bersih dan sederhana."
+      },
+      "neon": {
+        "name": "Cahaya Neon",
+        "description": "Terangi klik Anda dengan estetika neon yang hidup."
+      },
+      "retro": {
+        "name": "Tombol Retro",
+        "description": "Kembali ke masa keemasan mesin ketik dan 8-bit."
+      },
+      "cyber": {
+        "name": "Gaya Cyberpunk",
+        "description": "Desain futuristik untuk pemberontak digital."
+      }
+    },
+    "backgrounds": {
+      "default": {
+        "name": "Pola Default",
+        "description": "Pola latar belakang halus yang standar."
+      },
+      "blackboard": {
+        "name": "Papan Tulis Klasik",
+        "description": "Keren model lama. Sempurna untuk pelajaran mengklik yang serius!"
+      },
+      "paper_texture": {
+        "name": "Kanvas Kertas",
+        "description": "Awal yang segar dan bertekstur. Biarkan klik Anda menulis cerita."
+      },
+      "color_blocks": {
+        "name": "Cipratan Cat Air",
+        "description": "Nuansa artistik! Cipratan warna yang hidup untuk menginspirasi klik."
+      },
+      "board": {
+        "name": "Dek Kayu",
+        "description": "Kokoh dan rustik. Naiklah ke papan dengan tampilan klasik ini."
+      },
+      "cartoon_starry_sky": {
+        "name": "Kosmos Kartun",
+        "description": "Lepas landas! Petualangan berbintang yang menyenangkan menunggu setiap klik Anda."
+      },
+      "beach": {
+        "name": "Pantai Berpasir",
+        "description": "Matahari, pasir, dan klik! Pelarian virtual Anda ke pantai menunggu."
+      },
+      "grassland": {
+        "name": "Padang Rumput Hijau",
+        "description": "Segar dan berangin. Klik dengan bebas di padang rumput terbuka ini."
+      },
+      "ocean": {
+        "name": "Laut Biru",
+        "description": "Menyelamlah! Jelajahi kedalaman laut yang luas dan penuh klik."
+      }
+    },
+    "sounds": {
+      "default": {
+        "name": "Klik Default",
+        "description": "Suara klik asli yang memuaskan."
+      },
+      "mechanical": {
+        "name": "Tombol Mekanis",
+        "description": "Renyah dan taktil, seperti keyboard mekanis sungguhan."
+      },
+      "bubble": {
+        "name": "Letupan Gelembung",
+        "description": "Suara gelembung yang ringan dan menyenangkan untuk setiap tekanan."
+      },
+      "slap": {
+        "name": "Tamparan Tombol Spasi",
+        "description": "Beri tombol spasi Anda panggilan bangun yang tidak akan dilupakannya!"
+      },
+      "cheer": {
+        "name": "Raungan Kemenangan",
+        "description": "Setiap klik adalah kemenangan! Dengar kerumunan menjadi benar-benar liar."
+      },
+      "electric_current": {
+        "name": "Zzzap Listrik",
+        "description": "Rasakan kekuatan yang mengejutkan! Setiap klik adalah pengalaman yang menegangkan."
+      },
+      "explosion": {
+        "name": "Klik Ledakan",
+        "description": "Boom! Klik Anda benar-benar dinamit. Tangani dengan hati-hati seperti bahan peledak."
+      },
+      "water_droplet": {
+        "name": "Tetes Air",
+        "description": "Tetes, tetes, klik-klop! Suara yang menyegarkan untuk setiap tekanan."
+      },
+      "man_laugh": {
+        "name": "Tawa Riang",
+        "description": "Ha! Bahkan tombol spasi Anda menganggap kecepatan klik Anda luar biasa menggelikan."
+      },
+      "samsung_galaxy_whistle_notification": {
+        "name": "Siulan Galaxy",
+        "description": "Notifikasi: Anda sudah mengklik lagi! Suara siulan ikonik dan menarik itu."
+      },
+      "cough": {
+        "name": "Ahem!",
+        "description": "Ahem! Hanya membersihkan tenggorokannya... atau apakah klik Anda menular?"
+      }
+    },
+    "music": {
+      "default": {
+        "name": "Santai Default",
+        "description": "Seperti tetesan air mata lembut di tuts piano, melodi lembut dan reflektif."
+      },
+      "crazy_dave": {
+        "name": "Crazy Dave",
+        "description": "Aneh, tidak seimbang, dan berkesan. Menunjukkan karakter eksentrik dan ramah."
+      },
+      "cool_cat_jazz": {
+        "name": "Cool Cat Jazz",
+        "description": "Jazz Kucing Keren! Cepat, ceria, dan berayun. Membuat Anda ingin mengetukkan kaki!"
+      },
+      "watery_graves": {
+        "name": "Makam Berair",
+        "description": "Lembut, mengalir, dan santai. Membangkitkan ketenangan akuatik."
+      },
+      "braniac_maniac": {
+        "name": "Braniac Maniac",
+        "description": "Trek intens, dramatis, bertempo cepat. Menandakan konfrontasi epik atau momen klimaks."
+      },
+      "butterfly_lovers_violin_concerto": {
+        "name": "Konserto Biola Kekasih Kupu-kupu",
+        "description": "Konserto biola yang dicintai, kisah cinta tragis yang menyentuh dan ikonik dari cerita rakyat Tiongkok."
+      },
+      "rising_higher_step_by_step": {
+        "name": "Naik Lebih Tinggi Selangkah Demi Selangkah",
+        "description": "Pendakian yang ceria dan optimistis! Seperti melompat menuju masa depan yang cerah dan penuh harapan."
+      },
+      "dance_of_the_golden_snake": {
+        "name": "Tarian Ular Emas",
+        "description": "Tarian ular yang berapi-api dan meriah! Kembang api musikal murni. Sangat gembira."
+      },
+      "horse_racing": {
+        "name": "Balapan Kuda",
+        "description": "Karya erhu yang hidup menggambarkan energi balapan kuda yang menegangkan dan kemeriahan yang ceria."
+      },
+      "yankee_doodle": {
+        "name": "Yankee Doodle",
+        "description": "Seruling dan drum yang riang dan jenaka. Lagu bersemangat dan ikonik dari Amerika awal."
+      },
+      "ode_to_joy": {
+        "name": "Ode to Joy",
+        "description": "Melodi agung dan kemenangan di piano. Tema yang kuat dan mengangkat semangat perayaan universal."
+      },
+      "flight_of_the_bumblebee": {
+        "name": "Penerbangan Lebah",
+        "description": "Pusaran berdengung dan cepat! Kecepatan instrumental luar biasa meniru serangga yang sibuk dan marah."
+      },
+      "the_generals_edict": {
+        "name": "Dekrit Jenderal",
+        "description": "Suona menusuk, simbal berdenting! Perintah mendesak seorang jenderal bergema di medan perang yang dramatis."
+      }
+    }
+  }
+} 

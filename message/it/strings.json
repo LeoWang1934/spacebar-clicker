@@ -1,0 +1,265 @@
+{
+  "game": {
+    "title": "SPACEBAR CLICKER",
+    "per_second": "clic automatici al secondo:",
+    "spacebar_text": "BARRA SPAZIATRICE",
+    "reset_confirmation": "Sei sicuro di voler resettare tutti i dati del gioco?",
+    "reset_button": "reimposta gioco"
+  },
+  "items": {
+    "flash_slothmore": {
+      "name": "Flash Slothmore",
+      "description": "Il bradipo 'più veloce' del mondo. Colpisce la barra spaziatrice <b>%v</b> volte/sec. Sta facendo del suo meglio, ok?"
+    },
+    "squidward_tentacles": {
+      "name": "Squiddi Tentacolo",
+      "description": "Calamaro burbero. Odia il suo lavoro. Colpisce la barra spaziatrice <b>%v</b> volte/sec con la sua faccia... probabilmente."
+    },
+    "grumpy_grandma": {
+      "name": "Nonna Brontolona",
+      "description": "Non è arrabbiata con te, solo con la barra spaziatrice. La colpisce <b>%v</b> volte/sec con il suo bastone."
+    },
+    "woodpecker": {
+      "name": "Picchio",
+      "description": "Scambia la tua barra spaziatrice per un gustoso albero. La becca <b>%v</b> volte/sec. Nom nom nom."
+    },
+    "spacebar_enchantment": {
+      "name": "Incantesimo della Barra Spaziatrice",
+      "description": "Troppo pigro per cliccare? Questo incantesimo rende i tuoi clic <b>triplo</b> potenti! Lavora più intelligentemente."
+    },
+    "gatling": {
+      "name": "Mitragliatrice Gatling",
+      "description": "Esagerato? Macché. Questa mitragliatrice Gatling scatena <b>%v</b> clic/sec su quella povera barra spaziatrice. BRRRRT!"
+    },
+    "pikachu": {
+      "name": "Pikachu",
+      "description": "Pika-CIUUU! Questo topo elettrico fulmina la tua barra spaziatrice con <b>%v</b> clic/sec. Sorprendentemente efficace!"
+    },
+    "blastoise": {
+      "name": "Blastoise",
+      "description": "I cannoni idro di Blastoise inzuppano la barra spaziatrice con <b>%v</b> clic/sec. Surf in alto, clic in basso!"
+    },
+    "peashooter": {
+      "name": "Sparapiselli",
+      "description": "Questo piccolo amico spara piselli sulla tua barra spaziatrice per <b>%v</b> clic/sec. Verde e cattivo!"
+    },
+    "gatling_pea": {
+      "name": "Pisello Gatling",
+      "description": "Il cugino arrabbiato dello Sparapiselli. Scatena una tempesta di piselli di <b>%v</b> clic/sec. Ratta-tat-PISELLO!"
+    },
+    "super_mario": {
+      "name": "Super Mario",
+      "description": "It's-a me, Mario! Schiaccia la tua barra spaziatrice per <b>%v</b> clic/sec. Wahoo! Clic di livello superiore!"
+    },
+    "ultraman_tiga": {
+      "name": "Ultraman Tiga",
+      "description": "Ultraman Tiga difende i tuoi clic! Il Raggio Zepellion produce <b>%v</b> colpi di barra spaziatrice/sec. Per la giustizia!"
+    },
+    "revolver": {
+      "name": "Revolver",
+      "description": "Questa città non è abbastanza grande per barre spaziatrici non cliccate. Il revolver colpisce <b>%v</b> clic/sec, partner."
+    },
+    "shovel": {
+      "name": "Una Pala?",
+      "description": "Una pala? Davvero? Beh, scava <b>%v</b> clic/sec. Non mettere in discussione i suoi metodi, clicca e basta!"
+    },
+    "homer_simpson": {
+      "name": "Homer Simpson",
+      "description": "D'oh! La ricerca di ciambelle di Homer 'accidentalmente' porta <b>%v</b> clic/sec sulla barra spaziatrice. Mmm, clic..."
+    },
+    "poseidon": {
+      "name": "Poseidone",
+      "description": "Evoca un'onda di marea di <b>%v</b> clic/sec. La tua barra spaziatrice è ora ufficialmente una spiaggia!"
+    },
+    "mechanical_arm": {
+      "name": "Braccio Meccanico",
+      "description": "<b>Raddoppia</b> la tua velocità di clic. Attenzione: potrebbe sviluppare una mente propria."
+    }
+  },
+  "ui": {
+    "footer": "un gioco di",
+    "spacebar_theme_title": "Tema Barra Spaziatrice",
+    "sound_button": "Attiva/Disattiva Suono",
+    "music_button": "Attiva/Disattiva Musica",
+    "shop_button": "Negozio",
+    "shop_coming_soon": "Funzionalità negozio in arrivo!",
+    "spacebar_theme": {
+      "default": "Predefinito",
+      "neon": "Neon",
+      "retro": "Retro",
+      "cyber": "Cyber"
+    },
+    "shop": {
+      "title": "Negozio",
+      "tabs": {
+        "skins": "Aspetti",
+        "backgrounds": "Sfondi",
+        "sounds": "Suoni",
+        "music": "Musica"
+      },
+      "buttons": {
+        "buy": "Compra",
+        "use": "Usa",
+        "using": "In Uso"
+      }
+    }
+  },
+  "shop": {
+    "skins": {
+      "default": {
+        "name": "Aspetto Predefinito",
+        "description": "L'aspetto classico e affidabile della barra spaziatrice. Pulito e semplice."
+      },
+      "neon": {
+        "name": "Bagliore Neon",
+        "description": "Illumina i tuoi clic con un'estetica neon vibrante."
+      },
+      "retro": {
+        "name": "Tasti Retro",
+        "description": "Un ritorno all'epoca d'oro delle macchine da scrivere e dell'8-bit."
+      },
+      "cyber": {
+        "name": "Stile Cyberpunk",
+        "description": "Un design futuristico per il ribelle digitale."
+      }
+    },
+    "backgrounds": {
+      "default": {
+        "name": "Motivo Predefinito",
+        "description": "Il motivo di sfondo sottile standard."
+      },
+      "blackboard": {
+        "name": "Lavagna Classica",
+        "description": "Cool vecchia scuola. Perfetto per alcune serie lezioni di clic!"
+      },
+      "paper_texture": {
+        "name": "Tela di Carta",
+        "description": "Un inizio fresco e con texture. Lascia che i tuoi clic scrivano la storia."
+      },
+      "color_blocks": {
+        "name": "Spruzzata di Acquerello",
+        "description": "Vibrazioni artistiche! Una vivace spruzzata di colori per ispirare i clic."
+      },
+      "board": {
+        "name": "Ponte di Legno",
+        "description": "Robusto e rustico. Sali a bordo con questo look classico."
+      },
+      "cartoon_starry_sky": {
+        "name": "Cosmo Cartoon",
+        "description": "Decollo! Un'avventura stellata e giocosa attende ogni tuo clic."
+      },
+      "beach": {
+        "name": "Spiagge Sabbiose",
+        "description": "Sole, sabbia e clic! La tua fuga virtuale in spiaggia ti aspetta."
+      },
+      "grassland": {
+        "name": "Prati Verdi",
+        "description": "Fresco e ventilato. Clicca liberamente in questo campo erboso aperto."
+      },
+      "ocean": {
+        "name": "Mare Blu",
+        "description": "Tuffati! Esplora le vaste profondità dell'oceano piene di clic."
+      }
+    },
+    "sounds": {
+      "default": {
+        "name": "Clic Predefinito",
+        "description": "L'originale suono di clic soddisfacente."
+      },
+      "mechanical": {
+        "name": "Tasti Meccanici",
+        "description": "Croccante e tattile, come una vera tastiera meccanica."
+      },
+      "bubble": {
+        "name": "Scoppio di Bolle",
+        "description": "Un suono leggero e divertente di bolle che scoppiano per ogni pressione."
+      },
+      "slap": {
+        "name": "Schiaffo alla Barra Spaziatrice",
+        "description": "Dai alla tua barra spaziatrice una sveglia che non dimenticherà!"
+      },
+      "cheer": {
+        "name": "Ruggito di Vittoria",
+        "description": "Ogni clic è una vittoria! Senti la folla impazzire completamente."
+      },
+      "electric_current": {
+        "name": "Zzzap Elettrico",
+        "description": "Senti il potere scioccante! Ogni clic è un'esperienza elettrizzante."
+      },
+      "explosion": {
+        "name": "Clic Esplosivo",
+        "description": "Boom! I tuoi clic sono assolutamente dinamite. Maneggia con cura esplosiva."
+      },
+      "water_droplet": {
+        "name": "Goccia d'Acqua",
+        "description": "Drip, drop, clickety-clop! Suono rinfrescante per ogni pressione."
+      },
+      "man_laugh": {
+        "name": "Risata Allegra",
+        "description": "Ha! Persino la tua barra spaziatrice trova la tua velocità di clic esilarantemente impressionante."
+      },
+      "samsung_galaxy_whistle_notification": {
+        "name": "Fischio Galaxy",
+        "description": "Notifica: Hai cliccato di nuovo! Quel suono di fischio iconico e orecchiabile."
+      },
+      "cough": {
+        "name": "Ahem!",
+        "description": "Ahem! Si sta solo schiarendo la gola... o i tuoi clic sono contagiosi?"
+      }
+    },
+    "music": {
+      "default": {
+        "name": "Relax Predefinito",
+        "description": "Come morbide lacrime sui tasti del pianoforte, una melodia dolce e riflessiva."
+      },
+      "crazy_dave": {
+        "name": "Crazy Dave",
+        "description": "Stravagante, sbilanciato e memorabile. Suggerisce un personaggio eccentrico e amichevole."
+      },
+      "cool_cat_jazz": {
+        "name": "Cool Cat Jazz",
+        "description": "Cool Cat Jazz! Vivace, allegro e swing. Ti fa venire voglia di battere i piedi!"
+      },
+      "watery_graves": {
+        "name": "Tombe Acquatiche",
+        "description": "Dolce, fluente e rilassato. Evoca serenità acquatica e calma."
+      },
+      "braniac_maniac": {
+        "name": "Braniac Maniac",
+        "description": "Traccia intensa, drammatica e veloce. Segnala un confronto epico o un momento culminante."
+      },
+      "butterfly_lovers_violin_concerto": {
+        "name": "Concerto per Violino degli Amanti Farfalla",
+        "description": "Amato concerto per violino, una commovente e iconica storia d'amore tragica dal folklore cinese."
+      },
+      "rising_higher_step_by_step": {
+        "name": "Salire Più In Alto Passo Dopo Passo",
+        "description": "Salita allegra e ottimista! Come saltellare verso un futuro luminoso e pieno di speranza."
+      },
+      "dance_of_the_golden_snake": {
+        "name": "Danza del Serpente Dorato",
+        "description": "Danza serpentina infuocata e festosa! Fuochi d'artificio musicali puri. Selvaggiamente giubilante."
+      },
+      "horse_racing": {
+        "name": "Corsa di Cavalli",
+        "description": "Vibrante pezzo di erhu che rappresenta l'energia emozionante di una corsa di cavalli e la festività vivace."
+      },
+      "yankee_doodle": {
+        "name": "Yankee Doodle",
+        "description": "Piffero e tamburo allegri e giocosi. Una melodia vivace e iconica dell'America delle origini."
+      },
+      "ode_to_joy": {
+        "name": "Inno alla Gioia",
+        "description": "Melodia grandiosa e trionfante al pianoforte. Un tema potente e edificante di celebrazione universale."
+      },
+      "flight_of_the_bumblebee": {
+        "name": "Volo del Calabrone",
+        "description": "Turbine ronzante e veloce! Incredibile velocità strumentale imita un insetto frenetico e furioso."
+      },
+      "the_generals_edict": {
+        "name": "L'Editto del Generale",
+        "description": "Suona penetrante, piatti fragorosi! Il comando urgente di un generale echeggia su un campo di battaglia drammatico."
+      }
+    }
+  }
+} 

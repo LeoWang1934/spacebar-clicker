@@ -1,0 +1,265 @@
+{
+  "game": {
+    "title": "SPACEBAR CLICKER",
+    "per_second": "Automatische Klicks pro Sekunde:",
+    "spacebar_text": "LEERTASTE",
+    "reset_confirmation": "Sind Sie sicher, dass Sie alle Spieldaten zurücksetzen möchten?",
+    "reset_button": "Spiel zurücksetzen"
+  },
+  "items": {
+    "flash_slothmore": {
+      "name": "Flash Slothmore",
+      "description": "Das 'schnellste' Faultier der Welt. Drückt die Leertaste <b>%v</b> Mal/Sek. Er gibt sein Bestes, okay?"
+    },
+    "squidward_tentacles": {
+      "name": "Thaddäus Tentakel",
+      "description": "Mürrischer Tintenfisch. Hasst seinen Job. Schlägt die Leertaste <b>%v</b> Mal/Sek mit seinem Gesicht... wahrscheinlich."
+    },
+    "grumpy_grandma": {
+      "name": "Mürrische Oma",
+      "description": "Sie ist nicht sauer auf dich, nur auf die Leertaste. Schlägt sie <b>%v</b> Mal/Sek mit ihrem Stock."
+    },
+    "woodpecker": {
+      "name": "Specht",
+      "description": "Verwechselt deine Leertaste mit einem leckeren Baum. Pickt sie <b>%v</b> Mal/Sek. Nam nam nam."
+    },
+    "spacebar_enchantment": {
+      "name": "Leertasten-Verzauberung",
+      "description": "Zu faul zum Klicken? Diese Verzauberung macht deine Klicks <b>dreimal</b> stärker! Arbeite intelligenter."
+    },
+    "gatling": {
+      "name": "Gatling-Kanone",
+      "description": "Übertrieben? Nö. Diese Gatling-Kanone feuert <b>%v</b> Klicks/Sek auf die arme Leertaste. BRRRRT!"
+    },
+    "pikachu": {
+      "name": "Pikachu",
+      "description": "Pika-TSCHUU! Diese elektrische Maus schockt deine Leertaste mit <b>%v</b> Klicks/Sek. Schockierend effektiv!"
+    },
+    "blastoise": {
+      "name": "Turtok",
+      "description": "Turtoks Hydro-Kanonen durchnässen die Leertaste mit <b>%v</b> Klicks/Sek. Wellen hoch, Klicks runter!"
+    },
+    "peashooter": {
+      "name": "Erbsenkanone",
+      "description": "Dieser kleine Kerl schießt Erbsen auf deine Leertaste für <b>%v</b> Klicks/Sek. Grün und gemein!"
+    },
+    "gatling_pea": {
+      "name": "Gatling-Erbse",
+      "description": "Der wütende Cousin der Erbsenkanone. Entfesselt einen Erbsen-Sturm von <b>%v</b> Klicks/Sek. Ratta-tat-ERBSE!"
+    },
+    "super_mario": {
+      "name": "Super Mario",
+      "description": "It's-a me, Mario! Stampft auf deine Leertaste für <b>%v</b> Klicks/Sek. Wahoo! Klicks der nächsten Ebene!"
+    },
+    "ultraman_tiga": {
+      "name": "Ultraman Tiga",
+      "description": "Ultraman Tiga verteidigt deine Klicks! Zepellion-Strahl liefert <b>%v</b> Leertasten-Hits/Sek. Für Gerechtigkeit!"
+    },
+    "revolver": {
+      "name": "Revolver",
+      "description": "Diese Stadt ist nicht groß genug für ungeklickte Leertasten. Revolver trifft <b>%v</b> Klicks/Sek, Partner."
+    },
+    "shovel": {
+      "name": "Eine Schaufel?",
+      "description": "Eine Schaufel? Wirklich? Nun, sie gräbt <b>%v</b> Klicks/Sek aus. Hinterfrage ihre Methoden nicht, klick einfach!"
+    },
+    "homer_simpson": {
+      "name": "Homer Simpson",
+      "description": "D'oh! Homers Donut-Suche landet 'versehentlich' <b>%v</b> Klicks/Sek auf der Leertaste. Mmm, Klicks..."
+    },
+    "poseidon": {
+      "name": "Poseidon",
+      "description": "Beschwört eine Flutwelle von <b>%v</b> Klicks/Sek. Deine Leertaste ist jetzt offiziell ein Strand!"
+    },
+    "mechanical_arm": {
+      "name": "Mechanischer Arm",
+      "description": "<b>Verdoppelt</b> deine eigene Klickgeschwindigkeit. Warnung: könnte ein Eigenleben entwickeln."
+    }
+  },
+  "ui": {
+    "footer": "ein Spiel von",
+    "spacebar_theme_title": "Leertasten-Design",
+    "sound_button": "Sound ein-/ausschalten",
+    "music_button": "Musik ein-/ausschalten",
+    "shop_button": "Shop",
+    "shop_coming_soon": "Shop-Funktion kommt bald!",
+    "spacebar_theme": {
+      "default": "Standard",
+      "neon": "Neon",
+      "retro": "Retro",
+      "cyber": "Cyber"
+    },
+    "shop": {
+      "title": "Shop",
+      "tabs": {
+        "skins": "Designs",
+        "backgrounds": "Hintergründe",
+        "sounds": "Sounds",
+        "music": "Musik"
+      },
+      "buttons": {
+        "buy": "Kaufen",
+        "use": "Benutzen",
+        "using": "In Benutzung"
+      }
+    }
+  },
+  "shop": {
+    "skins": {
+      "default": {
+        "name": "Standard-Design",
+        "description": "Das klassische, zuverlässige Leertasten-Design. Sauber und einfach."
+      },
+      "neon": {
+        "name": "Neon-Leuchten",
+        "description": "Erhelle deine Klicks mit einer lebendigen Neon-Ästhetik."
+      },
+      "retro": {
+        "name": "Retro-Tasten",
+        "description": "Eine Erinnerung an das goldene Zeitalter der Schreibmaschinen und 8-Bit."
+      },
+      "cyber": {
+        "name": "Cyberpunk-Kante",
+        "description": "Ein futuristisches Design für den digitalen Rebellen."
+      }
+    },
+    "backgrounds": {
+      "default": {
+        "name": "Standard-Muster",
+        "description": "Das übliche, subtile Hintergrundmuster."
+      },
+      "blackboard": {
+        "name": "Kreidetafel-Klassiker",
+        "description": "Altschulcool. Perfekt für ernsthafte Klick-Lektionen!"
+      },
+      "paper_texture": {
+        "name": "Papier-Leinwand",
+        "description": "Ein frischer, strukturierter Start. Lass deine Klicks die Geschichte schreiben."
+      },
+      "color_blocks": {
+        "name": "Aquarell-Splash",
+        "description": "Künstlerische Vibes! Ein lebendiger Farbschwung zur Inspiration deiner Klicks."
+      },
+      "board": {
+        "name": "Holzdeck",
+        "description": "Robust und rustikal. Steig ein bei diesem klassischen Look."
+      },
+      "cartoon_starry_sky": {
+        "name": "Cartoon-Kosmos",
+        "description": "Abheben! Ein verspieltes, sternenreiches Abenteuer erwartet jeden deiner Klicks."
+      },
+      "beach": {
+        "name": "Sandige Küste",
+        "description": "Sonne, Sand und Klicks! Dein virtueller Strandurlaub wartet."
+      },
+      "grassland": {
+        "name": "Grüne Wiesen",
+        "description": "Frisch und luftig. Klicke frei in diesem offenen, grasigen Feld."
+      },
+      "ocean": {
+        "name": "Blaues Meer",
+        "description": "Tauche ein! Erforsche die weiten, klickreichen Tiefen des Ozeans."
+      }
+    },
+    "sounds": {
+      "default": {
+        "name": "Standard-Klick",
+        "description": "Der originale, befriedigende Klick-Sound."
+      },
+      "mechanical": {
+        "name": "Mechanische Tasten",
+        "description": "Knackig und taktil, wie eine echte mechanische Tastatur."
+      },
+      "bubble": {
+        "name": "Blasen-Plopp",
+        "description": "Ein leichter und spaßiger Ploppklang für jeden Tastendruck."
+      },
+      "slap": {
+        "name": "Leertasten-Schlag",
+        "description": "Gib deiner Leertaste einen Weckruf, den sie nicht vergessen wird!"
+      },
+      "cheer": {
+        "name": "Siegesgebrüll",
+        "description": "Jeder Klick ist ein Sieg! Höre, wie die Menge völlig durchdreht."
+      },
+      "electric_current": {
+        "name": "Elektrischer Zzzap",
+        "description": "Spüre die schockierende Kraft! Jeder Klick ist ein elektrisierendes Erlebnis."
+      },
+      "explosion": {
+        "name": "Kabumm-Klick",
+        "description": "Boom! Deine Klicks sind absolut explosiv. Mit explosiver Vorsicht behandeln."
+      },
+      "water_droplet": {
+        "name": "Aqua-Tropfen",
+        "description": "Tropf, tropf, klickety-klack! Erfrischend cooler Sound für jeden Tastendruck."
+      },
+      "man_laugh": {
+        "name": "Fröhliches Kichern",
+        "description": "Ha! Sogar deine Leertaste findet deine Klickgeschwindigkeit erheiternd beeindruckend."
+      },
+      "samsung_galaxy_whistle_notification": {
+        "name": "Galaxy-Pfeifton",
+        "description": "Benachrichtigung: Du hast wieder geklickt! Dieser ikonische, eingängige Pfeifton."
+      },
+      "cough": {
+        "name": "Ahem!",
+        "description": "Ahem! Räuspert sich nur... oder ist dein Klicken ansteckend?"
+      }
+    },
+    "music": {
+      "default": {
+        "name": "Standard-Chill",
+        "description": "Wie sanfte Tränen auf Klaviertasten, eine sanfte, nachdenkliche Melodie."
+      },
+      "crazy_dave": {
+        "name": "Crazy Dave",
+        "description": "Verrückt, schräg und einprägsam. Deutet auf einen exzentrischen, freundlichen Charakter hin."
+      },
+      "cool_cat_jazz": {
+        "name": "Cool Cat Jazz",
+        "description": "Cool Cat Jazz! Flott, schwungvoll und mitreißend. Bringt dich zum Füßeklopfen!"
+      },
+      "watery_graves": {
+        "name": "Wasserreiche Gräber",
+        "description": "Sanft, fließend und entspannt. Beschwört aquatische Gelassenheit herauf."
+      },
+      "braniac_maniac": {
+        "name": "Braniac Maniac",
+        "description": "Intensiver, dramatischer, schneller Track. Signalisiert epische Konfrontation oder klimatischen Moment."
+      },
+      "butterfly_lovers_violin_concerto": {
+        "name": "Violinkonzert der Schmetterlingliebenden",
+        "description": "Beliebtes Violinkonzert, eine ergreifende und ikonische tragische Liebesgeschichte aus der chinesischen Folklore."
+      },
+      "rising_higher_step_by_step": {
+        "name": "Schritt für Schritt höher steigen",
+        "description": "Schwungvoller, optimistischer Aufstieg! Wie das Hüpfen in eine helle und hoffnungsvolle Zukunft."
+      },
+      "dance_of_the_golden_snake": {
+        "name": "Tanz der goldenen Schlange",
+        "description": "Feuriger, festlicher Schlangentanz! Reine, unverdünnte musikalische Feuerwerke. Wahnsinnig jubelnd."
+      },
+      "horse_racing": {
+        "name": "Pferderennen",
+        "description": "Lebhaftes Erhu-Stück, das die aufregende Energie eines Pferderennens und festliche Lebendigkeit darstellt."
+      },
+      "yankee_doodle": {
+        "name": "Yankee Doodle",
+        "description": "Muntere, verspielte Querpfeife und Trommel. Eine schwungvolle, ikonische Melodie des frühen Amerikas."
+      },
+      "ode_to_joy": {
+        "name": "Ode an die Freude",
+        "description": "Großartige, triumphale Melodie auf dem Klavier. Ein kraftvolles, erhebendes Thema universeller Feierlichkeit."
+      },
+      "flight_of_the_bumblebee": {
+        "name": "Hummelflug",
+        "description": "Zischender, summender Wirbelwind! Unglaubliche instrumentale Geschwindigkeit ahmt ein hektisches, wütendes Insekt nach."
+      },
+      "the_generals_edict": {
+        "name": "Der Erlass des Generals",
+        "description": "Durchdringende Suona, krachende Becken! Der dringende Befehl eines Generals hallt auf einem dramatischen Schlachtfeld wider."
+      }
+    }
+  }
+} 

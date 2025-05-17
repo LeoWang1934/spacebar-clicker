@@ -1,0 +1,265 @@
+{
+  "game": {
+    "title": "SPACEBAR CLICKER",
+    "per_second": "每秒自动点击数：",
+    "spacebar_text": "空格键",
+    "reset_confirmation": "确定要重置所有游戏数据吗？",
+    "reset_button": "重置游戏"
+  },
+  "items": {
+    "flash_slothmore": {
+      "name": "闪电树懒",
+      "description": "世界上'最快'的树懒。每秒点击空格键<b>%v</b>次。他正在尽力而为，好吗？"
+    },
+    "squidward_tentacles": {
+      "name": "章鱼哥",
+      "description": "脾气暴躁的乌贼。讨厌自己的工作。每秒用脸拍击空格键<b>%v</b>次...大概吧。"
+    },
+    "grumpy_grandma": {
+      "name": "暴躁老奶奶",
+      "description": "她不是在生你的气，只是在生空格键的气。每秒用拐杖敲击<b>%v</b>次。"
+    },
+    "woodpecker": {
+      "name": "啄木鸟",
+      "description": "把你的空格键误认为美味的树。每秒啄击<b>%v</b>次。啃啃啃。"
+    },
+    "spacebar_enchantment": {
+      "name": "空格键附魔",
+      "description": "懒得点击？这个附魔让你的点击威力<b>增强三倍</b>！聪明地工作。"
+    },
+    "gatling": {
+      "name": "加特林机枪",
+      "description": "杀伤力过大？不会。这把加特林机枪每秒向那可怜的空格键倾泻<b>%v</b>次点击。哒哒哒哒！"
+    },
+    "pikachu": {
+      "name": "皮卡丘",
+      "description": "皮卡-丘！这只电气鼠每秒用<b>%v</b>次电击你的空格键。震惊的效果！"
+    },
+    "blastoise": {
+      "name": "水箭龟",
+      "description": "水箭龟的水炮每秒用<b>%v</b>次点击浇透空格键。冲浪起来，点击下落！"
+    },
+    "peashooter": {
+      "name": "豌豆射手",
+      "description": "这个小家伙每秒朝你的空格键发射<b>%v</b>次豌豆。绿色又凶猛！"
+    },
+    "gatling_pea": {
+      "name": "机关豌豆",
+      "description": "豌豆射手愤怒的表亲。每秒释放<b>%v</b>次豌豆风暴。哒哒哒-豌豆！"
+    },
+    "super_mario": {
+      "name": "超级马里奥",
+      "description": "It's-a me, Mario！每秒踩踏你的空格键<b>%v</b>次。雅吼！下一级别的点击！"
+    },
+    "ultraman_tiga": {
+      "name": "迪迦奥特曼",
+      "description": "迪迦奥特曼保卫你的点击！哉佩利敖光线每秒发出<b>%v</b>次空格键打击。为了正义！"
+    },
+    "revolver": {
+      "name": "左轮手枪",
+      "description": "这个镇上容不下未被点击的空格键。左轮每秒击发<b>%v</b>次点击，伙计。"
+    },
+    "shovel": {
+      "name": "铲子？",
+      "description": "铲子？真的吗？好吧，它每秒挖掘<b>%v</b>次点击。别质疑它的方法，只管点击！"
+    },
+    "homer_simpson": {
+      "name": "霍默·辛普森",
+      "description": "D'oh！霍默寻找甜甜圈的任务\"偶然\"每秒落在空格键上<b>%v</b>次点击。嗯，点击..."
+    },
+    "poseidon": {
+      "name": "波塞冬",
+      "description": "召唤<b>%v</b>次/秒的潮汐浪潮。你的空格键现在正式成为一片海滩！"
+    },
+    "mechanical_arm": {
+      "name": "机械臂",
+      "description": "<b>加倍</b>你自己的点击速度。警告：可能会发展出自己的意识。"
+    }
+  },
+  "ui": {
+    "footer": "游戏出品",
+    "spacebar_theme_title": "空格键主题",
+    "sound_button": "切换音效",
+    "music_button": "切换音乐",
+    "shop_button": "商店",
+    "shop_coming_soon": "商店功能即将推出！",
+    "spacebar_theme": {
+      "default": "默认",
+      "neon": "霓虹",
+      "retro": "复古",
+      "cyber": "赛博"
+    },
+    "shop": {
+      "title": "商店",
+      "tabs": {
+        "skins": "皮肤",
+        "backgrounds": "背景",
+        "sounds": "音效",
+        "music": "音乐"
+      },
+      "buttons": {
+        "buy": "购买",
+        "use": "使用",
+        "using": "使用中"
+      }
+    }
+  },
+  "shop": {
+    "skins": {
+      "default": {
+        "name": "默认皮肤",
+        "description": "经典可靠的空格键外观。干净简洁。"
+      },
+      "neon": {
+        "name": "霓虹光芒",
+        "description": "用充满活力的霓虹美感点亮你的点击。"
+      },
+      "retro": {
+        "name": "复古按键",
+        "description": "回顾打字机和8位时代的黄金岁月。"
+      },
+      "cyber": {
+        "name": "赛博朋克风格",
+        "description": "为数字反叛者设计的未来主义风格。"
+      }
+    },
+    "backgrounds": {
+      "default": {
+        "name": "默认图案",
+        "description": "标准的微妙背景图案。"
+      },
+      "blackboard": {
+        "name": "经典黑板",
+        "description": "老派的酷。完美适合一些严肃的点击课程！"
+      },
+      "paper_texture": {
+        "name": "纸质画布",
+        "description": "清新有质感的开始。让你的点击书写故事。"
+      },
+      "color_blocks": {
+        "name": "水彩飞溅",
+        "description": "艺术氛围！充满活力的色彩飞溅激发点击灵感。"
+      },
+      "board": {
+        "name": "木质甲板",
+        "description": "坚固且质朴。加入这个经典外观。"
+      },
+      "cartoon_starry_sky": {
+        "name": "卡通宇宙",
+        "description": "起飞！一场充满趣味的星空冒险等待着你的每一次点击。"
+      },
+      "beach": {
+        "name": "沙滩海岸",
+        "description": "阳光、沙滩和点击！你的虚拟海滩度假在等着你。"
+      },
+      "grassland": {
+        "name": "绿色草原",
+        "description": "清新且微风习习。在这片开阔的草地上自由点击。"
+      },
+      "ocean": {
+        "name": "蓝色海洋",
+        "description": "潜入深海！探索充满点击的广阔海洋深处。"
+      }
+    },
+    "sounds": {
+      "default": {
+        "name": "默认点击",
+        "description": "原始且令人满足的点击声。"
+      },
+      "mechanical": {
+        "name": "机械按键",
+        "description": "清脆而触感十足，就像真正的机械键盘。"
+      },
+      "bubble": {
+        "name": "泡泡破裂",
+        "description": "每次按下时都有轻盈有趣的泡泡破裂声。"
+      },
+      "slap": {
+        "name": "耳光",
+        "description": "给你的空格键一个它永远不会忘记的耳光！"
+      },
+      "cheer": {
+        "name": "胜利欢呼",
+        "description": "每次点击都是一次胜利！听众们完全疯狂了。"
+      },
+      "electric_current": {
+        "name": "电流嗞啦声",
+        "description": "感受震撼的力量！每次点击都是一次电击体验。"
+      },
+      "explosion": {
+        "name": "爆炸点击",
+        "description": "轰！你的点击绝对是炸药。小心处理爆炸物。"
+      },
+      "water_droplet": {
+        "name": "水滴声",
+        "description": "滴，答，咔哒咔哒！每次按下都有清爽凉快的声音。"
+      },
+      "man_laugh": {
+        "name": "欢乐笑声",
+        "description": "哈！就连你的空格键也觉得你的点击速度滑稽得令人印象深刻。"
+      },
+      "samsung_galaxy_whistle_notification": {
+        "name": "Galaxy口哨声",
+        "description": "通知：你又点击了！那标志性的朗朗上口的口哨声。"
+      },
+      "cough": {
+        "name": "咳嗽声",
+        "description": "咳咳！只是清清嗓子...或者你的点击具有传染性？"
+      }
+    },
+    "music": {
+      "default": {
+        "name": "默认轻音乐",
+        "description": "像钢琴键上的柔软泪滴，一段温柔反思的旋律。"
+      },
+      "crazy_dave": {
+        "name": "疯狂戴夫",
+        "description": "古怪、不协调但令人难忘。暗示一个古怪、友好的角色。"
+      },
+      "cool_cat_jazz": {
+        "name": "酷猫爵士",
+        "description": "酷猫爵士！轻快、欢快又摇摆。让你想踏着脚步跳舞！"
+      },
+      "watery_graves": {
+        "name": "水中墓地",
+        "description": "柔和、流畅且放松。唤起平静、水中的宁静。"
+      },
+      "braniac_maniac": {
+        "name": "天才狂人",
+        "description": "强烈、戏剧性、快节奏的音轨。预示着史诗般的对决或高潮时刻。"
+      },
+      "butterfly_lovers_violin_concerto": {
+        "name": "梁祝小提琴协奏曲",
+        "description": "备受喜爱的小提琴协奏曲，中国民间故事中一个令人心碎且标志性的悲剧爱情故事。"
+      },
+      "rising_higher_step_by_step": {
+        "name": "步步高",
+        "description": "欢快、乐观的攀登！像是朝着光明而充满希望的未来跳跃。"
+      },
+      "dance_of_the_golden_snake": {
+        "name": "金蛇狂舞",
+        "description": "火热、喜庆的蛇舞！纯粹、未经稀释的音乐烟花。狂野地欢欣鼓舞。"
+      },
+      "horse_racing": {
+        "name": "赛马",
+        "description": "生动的二胡曲目，描绘令人兴奋的赛马能量和活泼的喜庆氛围。"
+      },
+      "yankee_doodle": {
+        "name": "扬基歌",
+        "description": "欢快、俏皮的笛声和鼓声。美国早期充满活力的标志性曲调。"
+      },
+      "ode_to_joy": {
+        "name": "欢乐颂",
+        "description": "钢琴上宏伟、胜利的旋律。强大、振奋人心的普世庆祝主题。"
+      },
+      "flight_of_the_bumblebee": {
+        "name": "野蜂飞舞",
+        "description": "疾驰、嗡嗡作响的旋风！令人难以置信的乐器速度模仿一只疯狂、愤怒的昆虫。"
+      },
+      "the_generals_edict": {
+        "name": "闯将令",
+        "description": "尖锐的唢呐，碰撞的铙钹！将军的紧急命令在戏剧性的战场上回荡。"
+      }
+    }
+  }
+} 

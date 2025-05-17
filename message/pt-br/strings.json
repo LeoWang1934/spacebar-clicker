@@ -1,0 +1,265 @@
+{
+  "game": {
+    "title": "SPACEBAR CLICKER",
+    "per_second": "cliques automáticos por segundo:",
+    "spacebar_text": "BARRA DE ESPAÇO",
+    "reset_confirmation": "Tem certeza de que deseja redefinir todos os dados do jogo?",
+    "reset_button": "reiniciar jogo"
+  },
+  "items": {
+    "flash_slothmore": {
+      "name": "Flash Slothmore",
+      "description": "A preguiça 'mais rápida' do mundo. Acerta a barra de espaço <b>%v</b> vezes/seg. Ele está se esforçando ao máximo, ok?"
+    },
+    "squidward_tentacles": {
+      "name": "Lula Molusco",
+      "description": "Lula mal-humorada. Odeia seu trabalho. Bate na barra de espaço <b>%v</b> vezes/seg com seu rosto... provavelmente."
+    },
+    "grumpy_grandma": {
+      "name": "Vovó Rabugenta",
+      "description": "Ela não está brava com você, apenas com a barra de espaço. Bate nela <b>%v</b> vezes/seg com sua bengala."
+    },
+    "woodpecker": {
+      "name": "Pica-pau",
+      "description": "Confunde sua barra de espaço com uma árvore saborosa. Bica-a <b>%v</b> vezes/seg. Nom nom nom."
+    },
+    "spacebar_enchantment": {
+      "name": "Encantamento da Barra de Espaço",
+      "description": "Preguiçoso demais para clicar? Este encantamento torna seus cliques <b>três vezes</b> mais fortes! Trabalhe de forma mais inteligente."
+    },
+    "gatling": {
+      "name": "Metralhadora Gatling",
+      "description": "Exagero? Não. Esta metralhadora Gatling descarrega <b>%v</b> cliques/seg nessa pobre barra de espaço. BRRRRT!"
+    },
+    "pikachu": {
+      "name": "Pikachu",
+      "description": "Pika-CHUUU! Este rato elétrico eletrocuta sua barra de espaço com <b>%v</b> cliques/seg. Chocantemente eficaz!"
+    },
+    "blastoise": {
+      "name": "Blastoise",
+      "description": "Os canhões de água do Blastoise encharcam a barra de espaço com <b>%v</b> cliques/seg. Surf em cima, cliques embaixo!"
+    },
+    "peashooter": {
+      "name": "Lança-ervilhas",
+      "description": "Este pequeno cara atira ervilhas na sua barra de espaço a <b>%v</b> cliques/seg. Verde e mau!"
+    },
+    "gatling_pea": {
+      "name": "Ervilha Gatling",
+      "description": "O primo zangado do Lança-ervilhas. Desencadeia uma tempestade de ervilhas de <b>%v</b> cliques/seg. Ratta-tat-ERVILHA!"
+    },
+    "super_mario": {
+      "name": "Super Mario",
+      "description": "It's-a me, Mario! Pisando na sua barra de espaço a <b>%v</b> cliques/seg. Wahoo! Cliques de próximo nível!"
+    },
+    "ultraman_tiga": {
+      "name": "Ultraman Tiga",
+      "description": "Ultraman Tiga defende seus cliques! O Raio Zepellion entrega <b>%v</b> golpes na barra de espaço/seg. Pela justiça!"
+    },
+    "revolver": {
+      "name": "Revólver",
+      "description": "Esta cidade não é grande o suficiente para barras de espaço não clicadas. O revólver acerta <b>%v</b> cliques/seg, parceiro."
+    },
+    "shovel": {
+      "name": "Uma Pá?",
+      "description": "Uma pá? Sério? Bem, ela escava <b>%v</b> cliques/seg. Não questione seus métodos, apenas clique!"
+    },
+    "homer_simpson": {
+      "name": "Homer Simpson",
+      "description": "D'oh! A busca de rosquinhas do Homer 'acidentalmente' pousa <b>%v</b> cliques/seg na barra de espaço. Mmm, cliques..."
+    },
+    "poseidon": {
+      "name": "Poseidon",
+      "description": "Invoca uma onda de maré de <b>%v</b> cliques/seg. Sua barra de espaço agora é oficialmente uma praia!"
+    },
+    "mechanical_arm": {
+      "name": "Braço Mecânico",
+      "description": "<b>Dobra</b> sua própria velocidade de cliques. Aviso: pode desenvolver uma mente própria."
+    }
+  },
+  "ui": {
+    "footer": "um jogo de",
+    "spacebar_theme_title": "Tema da Barra de Espaço",
+    "sound_button": "Ativar/Desativar Som",
+    "music_button": "Ativar/Desativar Música",
+    "shop_button": "Loja",
+    "shop_coming_soon": "Recurso de loja em breve!",
+    "spacebar_theme": {
+      "default": "Padrão",
+      "neon": "Neon",
+      "retro": "Retrô",
+      "cyber": "Cyber"
+    },
+    "shop": {
+      "title": "Loja",
+      "tabs": {
+        "skins": "Visuais",
+        "backgrounds": "Fundos",
+        "sounds": "Sons",
+        "music": "Música"
+      },
+      "buttons": {
+        "buy": "Comprar",
+        "use": "Usar",
+        "using": "Usando"
+      }
+    }
+  },
+  "shop": {
+    "skins": {
+      "default": {
+        "name": "Visual Padrão",
+        "description": "O visual clássico e confiável da barra de espaço. Limpo e simples."
+      },
+      "neon": {
+        "name": "Brilho Neon",
+        "description": "Ilumine seus cliques com uma vibrante estética neon."
+      },
+      "retro": {
+        "name": "Teclas Retrô",
+        "description": "Uma referência à era de ouro das máquinas de escrever e 8-bits."
+      },
+      "cyber": {
+        "name": "Estilo Cyberpunk",
+        "description": "Um design futurista para o rebelde digital."
+      }
+    },
+    "backgrounds": {
+      "default": {
+        "name": "Padrão de Fundo",
+        "description": "O padrão de fundo sutil padrão."
+      },
+      "blackboard": {
+        "name": "Lousa Clássica",
+        "description": "Legal à moda antiga. Perfeito para algumas lições sérias de cliques!"
+      },
+      "paper_texture": {
+        "name": "Tela de Papel",
+        "description": "Um começo fresco e texturizado. Deixe seus cliques escreverem a história."
+      },
+      "color_blocks": {
+        "name": "Respingo de Aquarela",
+        "description": "Vibrações artísticas! Um respingo vibrante de cores para inspirar cliques."
+      },
+      "board": {
+        "name": "Deck de Madeira",
+        "description": "Robusto e rústico. Embarque neste visual clássico."
+      },
+      "cartoon_starry_sky": {
+        "name": "Cosmos de Cartoon",
+        "description": "Decolagem! Uma aventura estrelada e divertida aguarda cada clique seu."
+      },
+      "beach": {
+        "name": "Praias Arenosas",
+        "description": "Sol, areia e cliques! Sua escapadela virtual para a praia está esperando."
+      },
+      "grassland": {
+        "name": "Prados Verdes",
+        "description": "Fresco e ventilado. Clique livremente neste campo gramado aberto."
+      },
+      "ocean": {
+        "name": "Mar Azul",
+        "description": "Mergulhe! Explore as vastas profundezas do oceano cheias de cliques."
+      }
+    },
+    "sounds": {
+      "default": {
+        "name": "Clique Padrão",
+        "description": "O som original e satisfatório de clique."
+      },
+      "mechanical": {
+        "name": "Teclas Mecânicas",
+        "description": "Nítido e tátil, como um verdadeiro teclado mecânico."
+      },
+      "bubble": {
+        "name": "Estouro de Bolha",
+        "description": "Um som leve e divertido de bolhas estourando para cada pressão."
+      },
+      "slap": {
+        "name": "Tapa na Barra de Espaço",
+        "description": "Dê à sua barra de espaço um chamado que ela não esquecerá!"
+      },
+      "cheer": {
+        "name": "Rugido de Vitória",
+        "description": "Cada clique é uma vitória! Ouça a multidão ficar completamente louca."
+      },
+      "electric_current": {
+        "name": "Zzzap Elétrico",
+        "description": "Sinta o poder chocante! Cada clique é uma experiência eletrizante."
+      },
+      "explosion": {
+        "name": "Clique Explosivo",
+        "description": "Boom! Seus cliques são absolutamente dinamite. Manuseie com cuidado explosivo."
+      },
+      "water_droplet": {
+        "name": "Gota D'água",
+        "description": "Pinga, pinga, clique-clap! Som refrescantemente legal para cada pressão."
+      },
+      "man_laugh": {
+        "name": "Risada Alegre",
+        "description": "Ha! Até sua barra de espaço acha sua velocidade de clique hilariantemente impressionante."
+      },
+      "samsung_galaxy_whistle_notification": {
+        "name": "Assobio Galaxy",
+        "description": "Notificação: Você clicou novamente! Aquele som de assobio icônico e pegajoso."
+      },
+      "cough": {
+        "name": "Ahem!",
+        "description": "Ahem! Apenas limpando a garganta... ou será que seus cliques são contagiosos?"
+      }
+    },
+    "music": {
+      "default": {
+        "name": "Relaxamento Padrão",
+        "description": "Como suaves lágrimas em teclas de piano, uma melodia suave e reflexiva."
+      },
+      "crazy_dave": {
+        "name": "Crazy Dave",
+        "description": "Maluco, desequilibrado e memorável. Sugere um personagem excêntrico e amigável."
+      },
+      "cool_cat_jazz": {
+        "name": "Cool Cat Jazz",
+        "description": "Cool Cat Jazz! Animado, otimista e swingante. Faz você querer bater os pés!"
+      },
+      "watery_graves": {
+        "name": "Túmulos Aquáticos",
+        "description": "Suave, fluido e relaxado. Evoca serenidade aquática e calma."
+      },
+      "braniac_maniac": {
+        "name": "Braniac Maniac",
+        "description": "Faixa intensa, dramática e acelerada. Sinaliza confronto épico ou momento climático."
+      },
+      "butterfly_lovers_violin_concerto": {
+        "name": "Concerto para Violino dos Amantes Borboletas",
+        "description": "Amado concerto para violino, uma comovente e icônica história de amor trágica do folclore chinês."
+      },
+      "rising_higher_step_by_step": {
+        "name": "Subindo Mais Alto Passo a Passo",
+        "description": "Subida animada e otimista! Como pular em direção a um futuro brilhante e esperançoso."
+      },
+      "dance_of_the_golden_snake": {
+        "name": "Dança da Serpente Dourada",
+        "description": "Dança da serpente ardente e festiva! Fogos de artifício musicais puros. Selvagemente jubilante."
+      },
+      "horse_racing": {
+        "name": "Corrida de Cavalos",
+        "description": "Vibrante peça de erhu retratando a energia emocionante de corrida de cavalos e festividade animada."
+      },
+      "yankee_doodle": {
+        "name": "Yankee Doodle",
+        "description": "Pífano e tambor alegres e brincalhões. Uma melodia animada e icônica da América antiga."
+      },
+      "ode_to_joy": {
+        "name": "Ode à Alegria",
+        "description": "Melodia grandiosa e triunfante ao piano. Um tema poderoso e edificante de celebração universal."
+      },
+      "flight_of_the_bumblebee": {
+        "name": "Voo do Besouro",
+        "description": "Redemoinho zumbindo e veloz! Incrível velocidade instrumental imita um inseto frenético e furioso."
+      },
+      "the_generals_edict": {
+        "name": "O Édito do General",
+        "description": "Suona penetrante, címbalos estrondosos! O comando urgente de um general ecoa em um campo de batalha dramático."
+      }
+    }
+  }
+} 

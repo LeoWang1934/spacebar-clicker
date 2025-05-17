@@ -1,0 +1,265 @@
+{
+  "game": {
+    "title": "SPACEBAR CLICKER",
+    "per_second": "saniyedeki otomatik tıklamalar:",
+    "spacebar_text": "BOŞLUK TUŞU",
+    "reset_confirmation": "Tüm oyun verilerini sıfırlamak istediğinizden emin misiniz?",
+    "reset_button": "oyunu sıfırla"
+  },
+  "items": {
+    "flash_slothmore": {
+      "name": "Flash Slothmore",
+      "description": "Dünyanın 'en hızlı' tembel hayvanı. Boşluk tuşuna saniyede <b>%v</b> kez basıyor. Elinden gelenin en iyisini yapıyor, tamam mı?"
+    },
+    "squidward_tentacles": {
+      "name": "Squidward Tentacles",
+      "description": "Huysuz ahtapot. İşinden nefret ediyor. Boşluk tuşuna saniyede <b>%v</b> kez yüzüyle vuruyor... muhtemelen."
+    },
+    "grumpy_grandma": {
+      "name": "Huysuz Büyükanne",
+      "description": "Sana değil, sadece boşluk tuşuna kızgın. Bastonuyla saniyede <b>%v</b> kez vuruyor."
+    },
+    "woodpecker": {
+      "name": "Ağaçkakan",
+      "description": "Boşluk tuşunuzu lezzetli bir ağaç sanıyor. Saniyede <b>%v</b> kez gagalıyor. Nom nom nom."
+    },
+    "spacebar_enchantment": {
+      "name": "Boşluk Tuşu Büyüsü",
+      "description": "Tıklamak için çok mu tembelsin? Bu büyü tıklamalarını <b>üç kat</b> güçlü yapıyor! Daha akıllıca çalış."
+    },
+    "gatling": {
+      "name": "Gatling Silahı",
+      "description": "Aşırı mı? Yok canım. Bu Gatling silahı o zavallı boşluk tuşuna saniyede <b>%v</b> tıklama yağdırıyor. BRRRRT!"
+    },
+    "pikachu": {
+      "name": "Pikachu",
+      "description": "Pika-ÇUUU! Bu elektrikli fare boşluk tuşunuzu saniyede <b>%v</b> tıklama ile elektrikliyor. Şok edici derecede etkili!"
+    },
+    "blastoise": {
+      "name": "Blastoise",
+      "description": "Blastoise'in hidro topları boşluk tuşunu saniyede <b>%v</b> tıklama ile ıslatıyor. Sörf yukarı, tıklamalar aşağı!"
+    },
+    "peashooter": {
+      "name": "Bezelye Atıcı",
+      "description": "Bu küçük arkadaş boşluk tuşunuza saniyede <b>%v</b> tıklama için bezelye atıyor. Yeşil ve acımasız!"
+    },
+    "gatling_pea": {
+      "name": "Gatling Bezelye",
+      "description": "Bezelye Atıcı'nın sinirli kuzeni. Saniyede <b>%v</b> tıklamalık bir bezelye fırtınası estiriyor. Ratta-tat-BEZELYE!"
+    },
+    "super_mario": {
+      "name": "Süper Mario",
+      "description": "It's-a me, Mario! Boşluk tuşunuza saniyede <b>%v</b> tıklama için tepiniyor. Vuhuu! Bir sonraki seviye tıklamaları!"
+    },
+    "ultraman_tiga": {
+      "name": "Ultraman Tiga",
+      "description": "Ultraman Tiga tıklamalarını savunuyor! Zepellion Işını saniyede <b>%v</b> boşluk tuşu vuruşu sağlıyor. Adalet için!"
+    },
+    "revolver": {
+      "name": "Revolver",
+      "description": "Bu kasaba tıklanmamış boşluk tuşları için yeterince büyük değil. Revolver saniyede <b>%v</b> tıklama vuruyor, dostum."
+    },
+    "shovel": {
+      "name": "Bir Kürek?",
+      "description": "Bir kürek? Gerçekten mi? Eh, saniyede <b>%v</b> tıklama kazıyor. Yöntemlerini sorgulamayın, sadece tıklayın!"
+    },
+    "homer_simpson": {
+      "name": "Homer Simpson",
+      "description": "D'oh! Homer'ın çörek arayışı 'kazara' boşluk tuşuna saniyede <b>%v</b> tıklama indiriyor. Mmm, tıklamalar..."
+    },
+    "poseidon": {
+      "name": "Poseidon",
+      "description": "Saniyede <b>%v</b> tıklamalık bir gelgit dalgası çağırıyor. Boşluk tuşunuz artık resmen bir plaj!"
+    },
+    "mechanical_arm": {
+      "name": "Mekanik Kol",
+      "description": "Kendi tıklama hızınızı <b>ikiye katlar</b>. Uyarı: kendi aklını geliştirebilir."
+    }
+  },
+  "ui": {
+    "footer": "oyun yapımcısı",
+    "spacebar_theme_title": "Boşluk Tuşu Teması",
+    "sound_button": "Sesi Aç/Kapat",
+    "music_button": "Müziği Aç/Kapat",
+    "shop_button": "Mağaza",
+    "shop_coming_soon": "Mağaza özelliği yakında geliyor!",
+    "spacebar_theme": {
+      "default": "Varsayılan",
+      "neon": "Neon",
+      "retro": "Retro",
+      "cyber": "Siber"
+    },
+    "shop": {
+      "title": "Mağaza",
+      "tabs": {
+        "skins": "Kaplamalar",
+        "backgrounds": "Arka Planlar",
+        "sounds": "Sesler",
+        "music": "Müzik"
+      },
+      "buttons": {
+        "buy": "Satın Al",
+        "use": "Kullan",
+        "using": "Kullanılıyor"
+      }
+    }
+  },
+  "shop": {
+    "skins": {
+      "default": {
+        "name": "Varsayılan Kaplama",
+        "description": "Klasik, güvenilir boşluk tuşu görünümü. Temiz ve basit."
+      },
+      "neon": {
+        "name": "Neon Parıltısı",
+        "description": "Tıklamalarınızı canlı bir neon estetiği ile aydınlatın."
+      },
+      "retro": {
+        "name": "Retro Tuşlar",
+        "description": "Daktilo ve 8-bit'in altın çağına bir dönüş."
+      },
+      "cyber": {
+        "name": "Siberpunk Stili",
+        "description": "Dijital asi için fütüristik bir tasarım."
+      }
+    },
+    "backgrounds": {
+      "default": {
+        "name": "Varsayılan Desen",
+        "description": "Standart ince arka plan deseni."
+      },
+      "blackboard": {
+        "name": "Klasik Kara Tahta",
+        "description": "Eski okul tarzı. Ciddi tıklama dersleri için mükemmel!"
+      },
+      "paper_texture": {
+        "name": "Kağıt Doku",
+        "description": "Taze, dokulu bir başlangıç. Tıklamalarınızın hikayeyi yazmasına izin verin."
+      },
+      "color_blocks": {
+        "name": "Suluboya Sıçraması",
+        "description": "Sanatsal hisler! Tıklamaları ilham vermek için canlı bir renk sıçraması."
+      },
+      "board": {
+        "name": "Ahşap Güverte",
+        "description": "Sağlam ve rustik. Bu klasik görünüme katılın."
+      },
+      "cartoon_starry_sky": {
+        "name": "Çizgi Film Evren",
+        "description": "Fırlatılış! Oyunlu, yıldızlı bir macera her tıklamanızı bekliyor."
+      },
+      "beach": {
+        "name": "Kumlu Kıyılar",
+        "description": "Güneş, kum ve tıklamalar! Sanal plaj kaçamağınız sizi bekliyor."
+      },
+      "grassland": {
+        "name": "Yeşil Çayırlar",
+        "description": "Taze ve esintili. Bu açık, çimenli alanda özgürce tıklayın."
+      },
+      "ocean": {
+        "name": "Mavi Deniz",
+        "description": "Dalın! Okyanusun tıklamalarla dolu geniş derinliklerini keşfedin."
+      }
+    },
+    "sounds": {
+      "default": {
+        "name": "Varsayılan Tıklama",
+        "description": "Orijinal tatmin edici tıklama sesi."
+      },
+      "mechanical": {
+        "name": "Mekanik Tuşlar",
+        "description": "Net ve dokunsal, gerçek bir mekanik klavye gibi."
+      },
+      "bubble": {
+        "name": "Kabarcık Patlaması",
+        "description": "Her basış için hafif ve eğlenceli bir kabarcık patlama sesi."
+      },
+      "slap": {
+        "name": "Boşluk Tuşu Şamarı",
+        "description": "Boşluk tuşunuza unutamayacağı bir uyandırma çağrısı verin!"
+      },
+      "cheer": {
+        "name": "Zafer Kükremesi",
+        "description": "Her tıklama bir zafer! Kalabalığın tamamen çıldırdığını duyun."
+      },
+      "electric_current": {
+        "name": "Elektrik Zzzap",
+        "description": "Şok edici gücü hissedin! Her tıklama elektrikleyici bir deneyim."
+      },
+      "explosion": {
+        "name": "Patlama Tıklaması",
+        "description": "Boom! Tıklamalarınız kesinlikle dinamit. Patlayıcı dikkatle kullanın."
+      },
+      "water_droplet": {
+        "name": "Su Damlası",
+        "description": "Drip, drop, tıkır-tıkır! Her basış için ferahlatıcı havalı ses."
+      },
+      "man_laugh": {
+        "name": "Neşeli Kıkırdama",
+        "description": "Ha! Boşluk tuşunuz bile tıklama hızınızı kahkaha atılacak kadar etkileyici buluyor."
+      },
+      "samsung_galaxy_whistle_notification": {
+        "name": "Galaxy Islığı",
+        "description": "Bildirim: Yine tıkladınız! O ikonik, akılda kalıcı ıslık sesi."
+      },
+      "cough": {
+        "name": "Ahem!",
+        "description": "Ahem! Sadece boğazını temizliyor... yoksa tıklamanız bulaşıcı mı?"
+      }
+    },
+    "music": {
+      "default": {
+        "name": "Varsayılan Rahatlama",
+        "description": "Piyano tuşlarında yumuşak gözyaşları gibi, nazik, düşündürücü bir melodi."
+      },
+      "crazy_dave": {
+        "name": "Çılgın Dave",
+        "description": "Çılgın, dengesiz ve akılda kalıcı. Eksantrik, dost canlısı bir karakter önerir."
+      },
+      "cool_cat_jazz": {
+        "name": "Havalı Kedi Caz",
+        "description": "Havalı kedi caz! Canlı, neşeli ve salınan. Ayaklarınızı vurmak istemenizi sağlar!"
+      },
+      "watery_graves": {
+        "name": "Sulu Mezarlar",
+        "description": "Yumuşak, akıcı ve rahat. Sakin, su huzurunu çağrıştırır."
+      },
+      "braniac_maniac": {
+        "name": "Dahi Manyak",
+        "description": "Yoğun, dramatik, hızlı tempolu parça. Destansı bir karşılaşma veya doruk anını işaret eder."
+      },
+      "butterfly_lovers_violin_concerto": {
+        "name": "Kelebek Aşıkları Keman Konçertosu",
+        "description": "Sevilen keman konçertosu, Çin folklorundan etkileyici ve ikonik trajik bir aşk hikayesi."
+      },
+      "rising_higher_step_by_step": {
+        "name": "Adım Adım Yükselmek",
+        "description": "Neşeli, iyimser tırmanış! Parlak ve umut dolu bir geleceğe doğru zıplamak gibi."
+      },
+      "dance_of_the_golden_snake": {
+        "name": "Altın Yılanın Dansı",
+        "description": "Ateşli, şenlikli yılan dansı! Saf, katkısız müzik havai fişekleri. Çılgınca neşeli."
+      },
+      "horse_racing": {
+        "name": "At Yarışı",
+        "description": "Heyecan verici at yarışı enerjisini ve canlı şenliği tasvir eden canlı erhu parçası."
+      },
+      "yankee_doodle": {
+        "name": "Yankee Doodle",
+        "description": "Neşeli, oyunbaz ince flüt ve davul. Erken Amerikan döneminin canlı, ikonik melodisi."
+      },
+      "ode_to_joy": {
+        "name": "Neşeye Övgü",
+        "description": "Piyano üzerinde muhteşem, zafer dolu melodi. Evrensel kutlamanın güçlü, yükseltici teması."
+      },
+      "flight_of_the_bumblebee": {
+        "name": "Yaban Arısının Uçuşu",
+        "description": "Hızla giden, vızıldayan kasırga! İnanılmaz enstrümantal hız çılgın, öfkeli bir böceği taklit ediyor."
+      },
+      "the_generals_edict": {
+        "name": "Generalin Fermanı",
+        "description": "Delici suona, çarpışan zillar! Bir generalin acil emri dramatik bir savaş alanında yankılanıyor."
+      }
+    }
+  }
+} 

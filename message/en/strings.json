@@ -1,0 +1,265 @@
+{
+  "game": {
+    "title": "SPACEBAR CLICKER",
+    "per_second": "auto clicks per second:",
+    "spacebar_text": "SPACEBAR",
+    "reset_confirmation": "Are you sure you want to reset all the game data?",
+    "reset_button": "reset game"
+  },
+  "items": {
+    "flash_slothmore": {
+      "name": "Flash Slothmore",
+      "description": "World's 'fastest' sloth. Hits spacebar <b>%v</b> times/sec. He's trying his best, okay?"
+    },
+    "squidward_tentacles": {
+      "name": "Squidward Tentacles",
+      "description": "Grumpy squid. Hates his job. Hits spacebar <b>%v</b> times/sec with his face... probably."
+    },
+    "grumpy_grandma": {
+      "name": "Grumpy Grandma",
+      "description": "She's not mad at you, just the spacebar. Whacks it <b>%v</b> times/sec with her cane."
+    },
+    "woodpecker": {
+      "name": "Woodpecker",
+      "description": "Mistakes your spacebar for a tasty tree. Pecks it <b>%v</b> times/sec. Nom nom nom."
+    },
+    "spacebar_enchantment": {
+      "name": "Spacebar Enchantment",
+      "description": "Too lazy to click? This enchantment makes your clicks <b>triple</b> strong! Work smarter."
+    },
+    "gatling": {
+      "name": "Gatling Gun",
+      "description": "Overkill? Nah. This Gatling gun unleashes <b>%v</b> clicks/sec on that poor spacebar. BRRRRT!"
+    },
+    "pikachu": {
+      "name": "Pikachu",
+      "description": "Pika-CHOO! This electric mouse zaps your spacebar for <b>%v</b> clicks/sec. Shockingly effective!"
+    },
+    "blastoise": {
+      "name": "Blastoise",
+      "description": "Blastoise's hydro cannons drench the spacebar with <b>%v</b> clicks/sec. Surf's up, clicks down!"
+    },
+    "peashooter": {
+      "name": "Peashooter",
+      "description": "This little guy shoots peas at your spacebar for <b>%v</b> clicks/sec. Green and mean!"
+    },
+    "gatling_pea": {
+      "name": "Gatling Pea",
+      "description": "Peashooter's angry cousin. Unleashes a pea-storm of <b>%v</b> clicks/sec. Ratta-tat-PEA!"
+    },
+    "super_mario": {
+      "name": "Super Mario",
+      "description": "It's-a me, Mario! Stomping your spacebar for <b>%v</b> clicks/sec. Wahoo! Next level clicks!"
+    },
+    "ultraman_tiga": {
+      "name": "Ultraman Tiga",
+      "description": "Ultraman Tiga defends your clicks! Zepellion Ray delivers <b>%v</b> spacebar hits/sec. For justice!"
+    },
+    "revolver": {
+      "name": "Revolver",
+      "description": "This town ain't big enough for unclicked spacebars. Revolver hits for <b>%v</b> clicks/sec, partner."
+    },
+    "shovel": {
+      "name": "A Shovel?",
+      "description": "A shovel? Really? Well, it digs up <b>%v</b> clicks/sec. Don't question its methods, just click!"
+    },
+    "homer_simpson": {
+      "name": "Homer Simpson",
+      "description": "D'oh! Homer's donut quest 'accidentally' lands <b>%v</b> clicks/sec on the spacebar. Mmm, clicks..."
+    },
+    "poseidon": {
+      "name": "Poseidon",
+      "description": "Summons a tidal wave of <b>%v</b> clicks/sec. Your spacebar is now officially a beach!"
+    },
+    "mechanical_arm": {
+      "name": "Mechanical Arm",
+      "description": "<b>Double</b> your own clicks speed. Warning: may develop a mind of its own."
+    }
+  },
+  "ui": {
+    "footer": "a game by",
+    "spacebar_theme_title": "Spacebar Theme",
+    "sound_button": "Toggle Sound",
+    "music_button": "Toggle Music",
+    "shop_button": "Shop",
+    "shop_coming_soon": "Shop feature coming soon!",
+    "spacebar_theme": {
+      "default": "Default",
+      "neon": "Neon",
+      "retro": "Retro",
+      "cyber": "Cyber"
+    },
+    "shop": {
+      "title": "Shop",
+      "tabs": {
+        "skins": "Skins",
+        "backgrounds": "Backgrounds",
+        "sounds": "Sounds",
+        "music": "Music"
+      },
+      "buttons": {
+        "buy": "Buy",
+        "use": "Use",
+        "using": "Using"
+      }
+    }
+  },
+  "shop": {
+    "skins": {
+      "default": {
+        "name": "Default Skin",
+        "description": "The classic, reliable spacebar look. Clean and simple."
+      },
+      "neon": {
+        "name": "Neon Glow",
+        "description": "Light up your clicks with a vibrant neon aesthetic."
+      },
+      "retro": {
+        "name": "Retro Keys",
+        "description": "A throwback to the golden age of typewriters and 8-bit."
+      },
+      "cyber": {
+        "name": "Cyberpunk Edge",
+        "description": "A futuristic design for the digital rebel."
+      }
+    },
+    "backgrounds": {
+      "default": {
+        "name": "Default Pattern",
+        "description": "The standard subtle background pattern."
+      },
+      "blackboard": {
+        "name": "Chalkboard Classic",
+        "description": "Old school cool. Perfect for some serious clicking lessons!"
+      },
+      "paper_texture": {
+        "name": "Paper Canvas",
+        "description": "A fresh, textured start. Let your clicks write the story."
+      },
+      "color_blocks": {
+        "name": "Watercolor Splash",
+        "description": "Artistic vibes! A vibrant splash of colors to inspire clicks."
+      },
+      "board": {
+        "name": "Wooden Deck",
+        "description": "Sturdy and rustic. Get on board with this classic look."
+      },
+      "cartoon_starry_sky": {
+        "name": "Cartoon Cosmos",
+        "description": "Blast off! A playful, starry adventure awaits your every click."
+      },
+      "beach": {
+        "name": "Sandy Shores",
+        "description": "Sun, sand, and clicks! Your virtual beach getaway awaits."
+      },
+      "grassland": {
+        "name": "Green Meadows",
+        "description": "Fresh and breezy. Click freely in this open, grassy field."
+      },
+      "ocean": {
+        "name": "Blue Sea",
+        "description": "Dive in! Explore the vast, click-filled depths of the ocean."
+      }
+    },
+    "sounds": {
+      "default": {
+        "name": "Default Click",
+        "description": "The original satisfying click sound."
+      },
+      "mechanical": {
+        "name": "Mechanical Keys",
+        "description": "Crisp and tactile, like a true mechanical keyboard."
+      },
+      "bubble": {
+        "name": "Bubble Pop",
+        "description": "A light and fun bubble popping sound for each press."
+      },
+      "slap": {
+        "name": "Spacebar Slap",
+        "description": "Give your spacebar a wake-up call it won't forget!"
+      },
+      "cheer": {
+        "name": "Victory Roar",
+        "description": "Every click is a win! Hear the crowd go absolutely wild."
+      },
+      "electric_current": {
+        "name": "Electric Zzzap",
+        "description": "Feel the shocking power! Each click is an electrifying experience."
+      },
+      "explosion": {
+        "name": "Kaboom Click",
+        "description": "Boom! Your clicks are absolutely dyn-o-mite. Handle with explosive care."
+      },
+      "water_droplet": {
+        "name": "Aqua Drop",
+        "description": "Drip, drop, clickety-clop! Refreshingly cool sound for every press."
+      },
+      "man_laugh": {
+        "name": "Jolly Chuckle",
+        "description": "Ha! Even your spacebar finds your clicking speed hilariously impressive."
+      },
+      "samsung_galaxy_whistle_notification": {
+        "name": "Galaxy Whistle",
+        "description": "Notification: You've clicked again! That iconic, catchy whistle sound."
+      },
+      "cough": {
+        "name": "Ahem!",
+        "description": "Ahem! Just clearing its throat... or is your clicking contagious?"
+      }
+    },
+    "music": {
+      "default": {
+        "name": "Default Chill",
+        "description": "Like soft teardrops on piano keys, a gentle, reflective melody."
+      },
+      "crazy_dave": {
+        "name": "Crazy Dave",
+        "description": "Wacky, off-kilter, and memorable. Suggests an eccentric, friendly character."
+      },
+      "cool_cat_jazz": {
+        "name": "Cool Cat Jazz",
+        "description": "Cool cat jazz! Snappy, upbeat, and swinging. Makes you want to tap your feet!"
+      },
+      "watery_graves": {
+        "name": "Watery Graves",
+        "description": "Mellow, flowing, and relaxed. Evokes calm, aquatic serenity."
+      },
+      "braniac_maniac": {
+        "name": "Braniac Maniac",
+        "description": "Intense, dramatic, fast-paced track. Signals epic confrontation or climactic moment."
+      },
+      "butterfly_lovers_violin_concerto": {
+        "name": "Butterfly Lovers' Violin Concerto",
+        "description": "Beloved violin concerto, a poignant and iconic tragic love story from Chinese folklore."
+      },
+      "rising_higher_step_by_step": {
+        "name": "Rising Higher Step by Step",
+        "description": "Upbeat, optimistic climb! Like skipping towards a bright and hopeful future."
+      },
+      "dance_of_the_golden_snake": {
+        "name": "Dance of the Golden Snake",
+        "description": "Fiery, festive serpent dance! Pure, unadulterated musical fireworks. Wildly jubilant."
+      },
+      "horse_racing": {
+        "name": "Horse Racing",
+        "description": "Vibrant erhu piece depicting thrilling horse race energy and lively festivity."
+      },
+      "yankee_doodle": {
+        "name": "Yankee Doodle",
+        "description": "Jaunty, playful fife and drum. A spirited, iconic tune of early Americana."
+      },
+      "ode_to_joy": {
+        "name": "Ode to Joy",
+        "description": "Grand, triumphant melody on piano. A powerful, uplifting theme of universal celebration."
+      },
+      "flight_of_the_bumblebee": {
+        "name": "Flight of the Bumblebee",
+        "description": "Zipping, buzzing whirlwind! Incredible instrumental speed mimics a frantic, furious insect."
+      },
+      "the_generals_edict": {
+        "name": "The General's Edict",
+        "description": "Piercing suona, crashing cymbals! A general's urgent command echoes on a dramatic battlefield."
+      }
+    }
+  }
+} 
