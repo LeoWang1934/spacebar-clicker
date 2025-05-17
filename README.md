@@ -46,13 +46,23 @@ Spacebar Clicker is just one of the many fun things brewing over at [**PercyJack
 
 Why should you visit?
 *   🎉 **TONS of Fun Games**: Just like this one, and many more to tickle your fancy!
-*   🔮 **A Rich Variety of Intriguing Personality Quizzes**: Ever wondered [which Hogwarts House you belong to?](https://percyjacksoncabin.com/quizzes/hogwarts-house-quiz) [What your Spirit Animal truly is?](https://percyjacksoncabin.com/quizzes/spirit-animal) Or perhaps [which Divergent faction fits you best?](https://percyjacksoncabin.com/quizzes/divergent-quiz) We've got quizzes on everything from your [Mental Age](https://percyjacksoncabin.com/quizzes/mental-age-test) to your [Love Language](https://percyjacksoncabin.com/quizzes/love-language-quiz), and even which [Hunger Games District](https://percyjacksoncabin.com/quizzes/hunger-games-district-quiz) you'd hail from! Discover yourself in new and exciting ways.
+*   🔮 **A Rich Variety of Intriguing [Personality Quizzes](https://percyjacksoncabin.com/quizzes)**: Ever wondered which Hogwarts House you belong to? What your Spirit Animal truly is? Or perhaps which Divergent faction fits you best? We've got quizzes on everything from your Mental Age to your Love Language, and even which Hunger Games District you'd hail from! Discover yourself in new and exciting ways.
 *   🌐 **Multi-Language Support**: We're global, baby! Enjoy our content in various languages.
 
-Come on down to [PercyJacksonCabin.com](https://percyjacksoncabin.com) – your new favorite corner of the internet!
+Come on down to [**PercyJacksonCabin.com**](https://percyjacksoncabin.com) – your new favorite corner of the internet!
 
 ## 📜 About & Credits
 
 This delightfully addictive **Spacebar Clicker** game is proudly brought to you by the creative minds at [PercyJacksonCabin.com](https://percyjacksoncabin.com). We love making fun, accessible games and quizzes for everyone to enjoy.
 
 Thanks for playing, and may your clicks be ever plentiful!
+
+\---
+
+<p align="center">
+  <a href="https://percyjacksoncabin.com/games/spacebar-clicker" target="_blank" rel="noopener noreferrer" style="display: inline-block; padding: 12px 28px; font-size: 1.2em; color: white; background-color: #4CAF50; text-align: center; text-decoration: none; border-radius: 8px; font-weight: bold;">
+    🚀 Play Spacebar Clicker Now! 🚀
+  </a>
+</p>
+
+ 
