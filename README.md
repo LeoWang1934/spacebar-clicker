@@ -57,7 +57,9 @@ This delightfully addictive **Spacebar Clicker** game is proudly brought to you 
 
 Thanks for playing, and may your clicks be ever plentiful!
 
-\---
+---
+
+
 
 <p align="center">
   <a href="https://percyjacksoncabin.com/games/spacebar-clicker" target="_blank" rel="noopener noreferrer" style="display: inline-block; padding: 12px 28px; font-size: 1.2em; color: white; background-color: #4CAF50; text-align: center; text-decoration: none; border-radius: 8px; font-weight: bold;">
